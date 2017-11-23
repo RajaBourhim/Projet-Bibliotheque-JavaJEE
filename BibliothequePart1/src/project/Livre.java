@@ -19,8 +19,7 @@ public class Livre {
 		this.nbLivresEmpruntes = nbLivresEmpruntes;
 		
 	}
-
-
+	
 	public String getTitre() {
 		return titre;
 	}

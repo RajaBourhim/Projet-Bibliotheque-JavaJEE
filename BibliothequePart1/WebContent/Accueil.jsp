@@ -11,7 +11,7 @@
 
 <%-- Partie Connexion --%>
 <h3>Connexion au portail</h3>
-	<form action='ProcessConnexion' method='POST'>
+	<form action='Controleur' method='POST'>
 		Login: <input type='text' name='login'/> 
 		Password: <input type='password' name='password'/> 
 		<input type='submit' value='Connecter'/> 

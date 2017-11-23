@@ -7,10 +7,14 @@
 <title>Page Adhérent</title>
 </head>
 <body>
+<%--Bouton deconnexion --%>
+<form action='Controleur' method='POST'>
+		<input type='submit' value='Deconnexion'/> 
+	</form>
 
 <%-- Partie Recherche --%>
 <h3>Rechercher un livre </h3>
-	<form action='ProcessConnexion' method='POST'>
+	<form action='Controleur' method='POST'>
 		auteur: <input type='text' name='auteur'/> 
 		titre: <input type='text' name='titre'/> 
 		<input type='submit' value='Rechercher'/> 

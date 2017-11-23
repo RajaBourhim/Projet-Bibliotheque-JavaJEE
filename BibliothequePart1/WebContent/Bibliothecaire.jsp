@@ -11,7 +11,7 @@
 <h2>Gestion des livres</h2>
 <%-- Partie ajouter --%>
 <h3>Ajouter un livre</h3>
-	<form action='ProcessConnexion' method='POST'>
+	<form action='Controleur' method='POST'>
 		auteur: <input type='text' name='auteur'/> 
 		titre: <input type='text' name='titre'/> 
 		<input type='submit' value='Ajouter'/> 
