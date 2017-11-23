@@ -19,26 +19,6 @@ public class Livre {
 		this.nbLivresEmpruntes = nbLivresEmpruntes;
 		
 	}
-<<<<<<< HEAD
-=======
-
-	public void reserver(){
-		if(this.nblivresDispo==0){
-			System.out.println("Il n'y a pas d'exemplaire de libre.");
-		}else{
-			//Mettre à jour le statut de l'exemplaire dans la classe Occupation
-			this.nbLivresReserves++;
-			this.nblivresDispo--;
-			System.out.println("L'exemplaire a bien été réservé.");
-		}
-	}
-	
-	public void annulerReservation(){
-		this.nbLivresReserves--;
-		this.nblivresDispo++;
-		System.out.println("La réservation a bien été annulée.");
-	}
->>>>>>> ef9e38dfdfee5f6e618bfba734073dfa99f19e8b
 	
 	public String getTitre() {
 		return titre;
