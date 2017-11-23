@@ -101,7 +101,11 @@ public class Modele {
 		return connect;
 	}
 	
-	
+	public static Livre[] consultation(){
+		Livre listR[] = new Livre[5];
+		
+		return listR;
+	}
 	
 
 }

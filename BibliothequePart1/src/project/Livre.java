@@ -19,8 +19,6 @@ public class Livre {
 		this.nbLivresEmpruntes = nbLivresEmpruntes;
 		
 	}
-<<<<<<< HEAD
-=======
 
 	public void reserver(){
 		if(this.nblivresDispo==0){
@@ -38,7 +36,6 @@ public class Livre {
 		this.nblivresDispo++;
 		System.out.println("La réservation a bien été annulée.");
 	}
->>>>>>> ef9e38dfdfee5f6e618bfba734073dfa99f19e8b
 	
 	public String getTitre() {
 		return titre;

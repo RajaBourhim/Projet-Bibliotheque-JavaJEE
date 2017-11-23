@@ -61,6 +61,9 @@ public class Controleur extends HttpServlet {
 				System.out.println("Les identifiants ne sont pas corrects");
 				response.sendRedirect("Accueil.jsp");
 			}
+		} else if (request.getParameter("EnterResearch") != null){
+			
+			
 		}
 		// Log in failed
 		else {
