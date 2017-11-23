@@ -20,7 +20,23 @@ public class Livre {
 		
 	}
 
-
+	public void reserver(){
+		if(this.nblivresDispo==0){
+			System.out.println("Il n'y a pas d'exemplaire de libre.");
+		}else{
+			//Mettre à jour le statut de l'exemplaire dans la classe Occupation
+			this.nbLivresReserves++;
+			this.nblivresDispo--;
+			System.out.println("L'exemplaire a bien été réservé.");
+		}
+	}
+	
+	public void annulerReservation(){
+		this.nbLivresReserves--;
+		this.nblivresDispo++;
+		System.out.println("La réservation a bien été annulée.");
+	}
+	
 	public String getTitre() {
 		return titre;
 	}
