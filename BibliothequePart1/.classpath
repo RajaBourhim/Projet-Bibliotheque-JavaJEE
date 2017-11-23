@@ -11,6 +11,10 @@
 	<classpathentry kind="lib" path="C:/Users/Raja/Documents/apache-tomcat-8.5.20/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Raja/Downloads/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Raja/Downloads/standard-1.1.2.jar"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="/Users/gauthier/Downloads/apache-tomcat-8.0.46/lib/servlet-api.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/Logan/Downloads/apache-tomcat-8.5.20/lib/servlet-api.jar"/>
+>>>>>>> ef9e38dfdfee5f6e618bfba734073dfa99f19e8b
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
