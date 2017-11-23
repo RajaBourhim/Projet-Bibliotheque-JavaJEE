@@ -70,6 +70,7 @@ public class Modele {
 		return bibli;
 	}
 	
+	// Permet de verifier si les identifiant et password sont bons
 	public static boolean verifieConnexion(String loginConnect, String passConnect,Bibliotheque bibli){
 		
 		boolean connect = false; 
