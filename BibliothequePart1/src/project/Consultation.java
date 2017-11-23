@@ -140,16 +140,11 @@ public class Consultation extends HttpServlet {
 				listResultFinal = listResult;
 			}
 			
-			if(request.getParameter("auteur") == null && request.getParameter("titre").length()==0){
-				
-				listResultFinal = bibli.listLivres;
-			}
-			
-			
 			for (j = 0; j < listResultFinal.size(); j++) {
 				System.out.println(
 						"Auteur: " + listResultFinal.get(j).auteur + " Titre: " + listResultFinal.get(j).titre);
 			}
+			
 			if(listResultFinal.size()>0){
 				Livre listR[] = new Livre[listResultFinal.size()];
 				String page = "/Accueil.jsp";
@@ -170,6 +165,20 @@ public class Consultation extends HttpServlet {
 			    RequestDispatcher rd = getServletContext()
 			                               .getRequestDispatcher(page);
 			    rd.forward(request, response);
+			}
+			
+		} else {
+			
+			if(request.getParameter("Statut")!=null){
+				if(request.getParameter("Statut").equals("Bibliothecaire")){
+					response.sendRedirect("Accueil.jsp");
+				} else if (request.getParameter("Statut").equals("Adherent")){
+					response.sendRedirect("Accueil.jsp");
+				} else{
+					response.sendRedirect("Accueil.jsp");
+				}
+			} else {
+				response.sendRedirect("Accueil.jsp");
 			}
 			
 		}

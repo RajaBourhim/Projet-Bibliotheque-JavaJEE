@@ -1,0 +1,19 @@
+
+
+
+
+Mode déconnecté: 
+- Recherche par auteur ou titre 
+On a décidé que si on appuie sur le bouton et qu'il n'y a rien dentrée ça fait rien
+auteur, titre, nombre d’exemplairestotal, nombre d’exemplaires empruntés. 
+Cette fonction de recherche est également
+
+Mode connecté bibliothécaire:
+ajouter ou supprimer un livre, 
+ajouter ou supprimer un exemplaire d’un livre, 
+emprunter ou restituer un exemplaire pour le compte d’un adhérent
+
+Mode connecté adhérent. 
+réserver un livre en vue d’un emprunt futur 
+annuler sa réservation s’il change d’avis. 
+L’annulation de la réservation sera automatique au moment de l’emprunt.
