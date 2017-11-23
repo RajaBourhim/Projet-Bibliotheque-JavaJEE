@@ -102,7 +102,14 @@ public class Modele {
 	}
 	
 	
-	
+	public static Livre[] consulteLivres(){
+		ArrayList<Livre> listResult = new ArrayList<>();
+		ArrayList<Livre> listResultFinal = new ArrayList<>();
+		Livre listR[] = null; 
+		
+		
+		return listR;
+	}
 
 }
 
