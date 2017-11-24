@@ -17,3 +17,7 @@ Mode connecté adhérent.
 réserver un livre en vue d’un emprunt futur 
 annuler sa réservation s’il change d’avis. 
 L’annulation de la réservation sera automatique au moment de l’emprunt.
+
+
+
+Faire le bouton deconnection 

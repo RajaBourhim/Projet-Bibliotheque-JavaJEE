@@ -49,6 +49,8 @@ public class Modele {
 		listUsers.add(user1);
 		listUsers.add(user2);
 		listUsers.add(user3);
+		listUsers.add(user4);
+
 
 		listOccupations.add(occup1);
 		listOccupations.add(occup2);
@@ -299,4 +301,27 @@ public class Modele {
 
 		return occupationARetourner;
 	}
+	
+	public static Bibliotheque ajouterLivre(String auteur, String titre, Bibliotheque bibli) {
+		int indexLivre = -1;
+		int j;
+		//On verifie que le livre n'existe pas 
+		for (j = 0; j < bibli.listLivres.size(); j++) {
+			if (bibli.listLivres.get(j).auteur.equals(auteur)&&bibli.listLivres.get(j).titre.equals(titre)) {
+				indexLivre = j;
+			}
+		}
+		
+		if (indexLivre != -1) {
+			bibli.listLivres.get(indexLivre).nblivresDispo++;
+		} else {
+			int idLivre = bibli.listLivres.size();
+			Livre monLivre = new Livre(idLivre,titre,auteur,1,0,0);
+			bibli.listLivres.add(monLivre);
+		}
+
+
+		return bibli;
+	}
+
 }

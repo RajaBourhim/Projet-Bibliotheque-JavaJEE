@@ -88,6 +88,16 @@ public class Controleur extends HttpServlet {
 				response.sendRedirect(page);
 			}
 			
+		}  else if (request.getParameter("AddBook") != null) {
+			String messageAjout = "ERROR: L'auteur et ou le titre n'ont pas été correctement definis";
+			if (request.getParameter("auteur") != null && request.getParameter("titre") != null) {
+				bibli = Modele.ajouterLivre(request.getParameter("auteur"),request.getParameter("titre"), bibli);
+ 				messageAjout = "INFO: Ajout du livre "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" terminé";
+			}
+			request.setAttribute("MessageAjout", messageAjout);
+		    RequestDispatcher rd = getServletContext()
+                    .getRequestDispatcher("/Bibliothecaire.jsp");
+		    rd.forward(request, response);
 		}
 		// Log in failed
 		else {
