@@ -16,7 +16,6 @@
 <%=request.getParameter("statut")%>
 
 
-
 <% if(livresRecherches != null) { %>
 <h3>Livres correspondants à votre recherche</h3>
 	<table>

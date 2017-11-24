@@ -108,6 +108,7 @@ public class Modele {
 		int indexLivre = -1;
 		int j =0;
 		
+		// On recherche par auteur si un nom d'auteur a été saisi
 		if (auteur != null) {
 			for (j = 0; j < bibli.listLivres.size(); j++) {
 				if (bibli.listLivres.get(j).auteur.equals(auteur)) {
@@ -116,19 +117,18 @@ public class Modele {
 				}
 			}
 		}
-		
+		// On recherche par titre si un titre a été saisi
 		if (titre.length()!=0) {
-			
+			//Si la recherche par auteur a obtenu des resultats - on va se baser sur ces derniers
 			if (listResult.size()>0) {
 				j = 0;
 				for (j = 0; j < listResult.size(); j++) {
-					
 					if (listResult.get(j).titre.equals(titre)) {
 						indexLivre = j;
 						listResultFinal.add(listResult.get(j));
 					}
 				}
-
+				// Sinon on va recherche a partir de la liste de livres de la bibli
 			} else {
 				j = 0;
 				for (j = 0; j < bibli.listLivres.size(); j++) {
@@ -141,8 +141,7 @@ public class Modele {
 		} else {
 			listResultFinal = listResult;
 		}
-		
-		
+		// On ajoute les résultats dans notre tableau si il y en a
 		if(listResultFinal.size()>0){
 			listR = new Livre[listResultFinal.size()];
 			for (int k = 0; k<listResultFinal.size(); k++){
@@ -150,8 +149,6 @@ public class Modele {
 				
 			}
 		} 
-		
-		System.out.println(listResultFinal.size());
 		return listR;
 	}
 

@@ -42,13 +42,10 @@ public class Controleur extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		int j = 0;
 
 		if (request.getParameter("login") != null && request.getParameter("password") != null) {
 			logged = Modele.verifieConnexion(request.getParameter("login"),request.getParameter("password"),bibli);
-			
 			if (logged) {
-				
 				indexUser = Modele.recupererIndexUser(request.getParameter("login"), bibli);
 				session.setAttribute("Logged", request.getParameter("login"));
 				session.setAttribute("Login", "true");
@@ -65,24 +62,24 @@ public class Controleur extends HttpServlet {
 				System.out.println("Les identifiants ne sont pas corrects");
 				response.sendRedirect("Accueil.jsp");
 			}
-		}else if (request.getParameter("EnterResearch") != null) {
+		} else if (request.getParameter("EnterResearch") != null) {
 			Livre listR[] = Modele.consulteLivres(request.getParameter("auteur"), request.getParameter("titre"), bibli);
-			
-			if(listR!=null){
-				String page = "/Accueil.jsp";
-				String test = request.getParameter("Statut");
-				if(request.getParameter("Statut")!=null){
-					System.out.println("BLABLA" +request.getParameter("Statut"));
-					if(request.getParameter("Statut").equals("Bibliothecaire")){
-						page = "/Bibliothecaire.jsp";
-					} else if (request.getParameter("Statut").equals("Adherent/")){
-						page = "/Adherent.jsp";
-					}
+			String page = "Accueil.jsp";
+			String test = request.getParameter("Statut");
+			if(request.getParameter("Statut")!=null){
+				if(request.getParameter("Statut").equals("Bibliothecaire")){
+					page = "Bibliothecaire.jsp";
+				} else if (request.getParameter("Statut").equals("Adherent/")){
+					page = "Adherent.jsp";
 				}
+			}
+			if(listR!=null){
 			    request.setAttribute("listData", listR);
 			    RequestDispatcher rd = getServletContext()
-			                               .getRequestDispatcher(page);
+			                               .getRequestDispatcher("/"+page);
 			    rd.forward(request, response);
+			} else {
+				response.sendRedirect(page);
 			}
 			
 		}
@@ -90,8 +87,6 @@ public class Controleur extends HttpServlet {
 		else {
 			response.sendRedirect("Accueil.jsp");
 		}
-		
-
 	}
 
 	/**
