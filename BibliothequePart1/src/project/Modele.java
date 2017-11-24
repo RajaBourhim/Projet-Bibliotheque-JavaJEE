@@ -70,7 +70,7 @@ public class Modele {
 		return bibli;
 	}
 
-	// Permet de verifier si les identifiant et password sont bons
+	// Permet de verifier si les identifiant et password entrés sont correctes
 	public static boolean verifieConnexion(String loginConnect, String passConnect, Bibliotheque bibli) {
 
 		boolean connect = false;
@@ -101,6 +101,7 @@ public class Modele {
 		return connect;
 	}
 
+	//Retourne la liste de livre resultant de la recherche
 	public static Livre[] consulteLivres(String auteur, String titre, Bibliotheque bibli) {
 		ArrayList<Livre> listResult = new ArrayList<>();
 		ArrayList<Livre> listResultFinal = new ArrayList<>();
@@ -152,6 +153,42 @@ public class Modele {
 		return listR;
 	}
 
+	public static Livre[] recupererLivreReserves(String login, Bibliotheque bibli){
+		ArrayList<Occupation> listResultOccup = new ArrayList<>();
+		ArrayList<Livre> listResultFinal = new ArrayList<>();
+		Livre listR[] = null;
+		int indexResa = -1;
+		//On récupère l'idAdherent du user;
+		int idAdherent = recupererIdUser(login,bibli);
+		
+		if(idAdherent!=-1 && login !=null){
+			for (int j = 0; j < bibli.listOccupations.size(); j++) {
+				if (bibli.listOccupations.get(j).idAdherent==idAdherent) {
+						indexResa= j;
+						listResultOccup.add(bibli.listOccupations.get(j));
+				}
+				
+			}
+			if(listResultOccup.size()>0){
+				// On va récuperer la liste de livre 
+				for (int j = 0; j <listResultOccup.size(); j++) {
+					// On va récupérer un livre à partir de son id
+					listResultFinal.add(recupererLivreParId(listResultOccup.get(j).idLivre, bibli));
+				}			
+			}
+			
+		}
+		
+		// On ajoute les résultats dans notre tableau si il y en a
+		if(listResultFinal.size()>0){
+			listR = new Livre[listResultFinal.size()];
+			for (int k = 0; k<listResultFinal.size(); k++){
+				listR[k] = listResultFinal.get(k);		
+			}
+		} 
+		return listR;
+	}
+	
 	public static Bibliotheque reserveLivre(String auteur, String titre, String login, Bibliotheque bibli) {
 
 		int idUser = recupererIdUser(login, bibli);
@@ -221,6 +258,17 @@ public class Modele {
 			}
 		}
 		return indexLivre;
+	}
+	
+	public static Livre recupererLivreParId(int idLivre, Bibliotheque bibli){
+		Livre monLivre = null;
+		
+		for (int i = 0; i < bibli.listLivres.size(); i++) {
+			if (bibli.listLivres.get(i).idLivre == idLivre) {
+				monLivre = bibli.listLivres.get(i);
+			}
+		}
+		return monLivre;
 	}
 	
 	public static int recupererIndexUser(String login, Bibliotheque bibli) {

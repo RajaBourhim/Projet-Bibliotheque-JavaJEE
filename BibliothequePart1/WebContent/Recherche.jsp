@@ -1,4 +1,3 @@
-
 <%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, project.Livre " %>
 <link href="file.css" rel="stylesheet" type="text/css"  media="screen">
 <% 	Livre livresRecherches[] = (Livre[]) request.getAttribute("listData"); 
@@ -22,9 +21,11 @@
 		<tr>
        		<td>Auteur</td>
        		<td>Titre</td>
-       		<td>Nombre de disponibilites</td>
+       		<td>Nombre de livres empruntes</td>
        		<td>Nombre total</td>
-        	<td> </td>  		
+       		<% if(!statut.equals("Accueil")){ %>
+        	<td> </td> 
+        	<% } %> 		
 
    		</tr>
 	<% 
@@ -36,7 +37,7 @@
 		<tr>
 			<td> <span class="auteur"><%=livre.getAuteur()%></span> </td>
 			<td> <span class="titre"><%=livre.getTitre()%></span> </td>
-			<td> <span class="titre"><%=livre.getNblivresDispo()%></span> </td>
+			<td> <span class="titre"><%=livre.getNbLivresEmpruntes()%></span> </td>
 			<td> <span class="titre"><%=total%></span> </td>
 			
 			<form action="Recherche" method="POST">
@@ -50,11 +51,12 @@
 				<%-- Si la personne est bibliothecaire --%>
 				<% if(statut.equals("Bibliothecaire") ){ %>
         		<td> 
-        			<% if (livre.getNblivresDispo()>0){ %>
+        			<% 	if (livre.getNblivresDispo()>0){ %>
         			<button type="submit" name="action" value="supp">Supprimer*</button>
         			<button type="submit" name="action" value="ttsupp"> Tout Supprimer*</button>
 					<button type="submit" name="action" value="emprunt" >Emprunter</button>
-					<% } if (livre.getNbLivresEmpruntes()>0){ %> 
+					<% } 
+        				if (livre.getNbLivresEmpruntes()>0){ %> 
 					<button type="submit" name="action" value="emprunt">Restituer</button>
 					<% } %>
         	    </td>  		

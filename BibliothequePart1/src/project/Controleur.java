@@ -42,29 +42,35 @@ public class Controleur extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
+		String page = "Accueil.jsp";
 
 		if (request.getParameter("login") != null && request.getParameter("password") != null) {
 			logged = Modele.verifieConnexion(request.getParameter("login"),request.getParameter("password"),bibli);
+			page = "Accueil.jsp";
 			if (logged) {
 				indexUser = Modele.recupererIndexUser(request.getParameter("login"), bibli);
 				session.setAttribute("Logged", request.getParameter("login"));
 				session.setAttribute("Login", "true");
 				session.setMaxInactiveInterval(30);
+				
 				if (!bibli.listUsers.get(indexUser).type) {
-					response.sendRedirect("Adherent.jsp");
-					session.setAttribute("Adherent", "true");
+					Livre listResa[] = Modele.recupererLivreReserves(request.getParameter("login"), bibli);
+					request.setAttribute("ListResa", listResa);
+					page = "Adherent.jsp";
 				} else {
-					response.sendRedirect("Bibliothecaire.jsp");
-					session.setAttribute("Bibliothecaire", "true");
+					page = "Bibliothecaire.jsp";
 				}
+			    RequestDispatcher rd = getServletContext()
+			                               .getRequestDispatcher("/"+page);
+			    rd.forward(request, response);
 
 			} else {
 				System.out.println("Les identifiants ne sont pas corrects");
-				response.sendRedirect("Accueil.jsp");
+				response.sendRedirect(page);
 			}
 		} else if (request.getParameter("EnterResearch") != null) {
 			Livre listR[] = Modele.consulteLivres(request.getParameter("auteur"), request.getParameter("titre"), bibli);
-			String page = "Accueil.jsp";
+			page = "Accueil.jsp";
 			String test = request.getParameter("Statut");
 			if(request.getParameter("Statut")!=null){
 				if(request.getParameter("Statut").equals("Bibliothecaire")){
