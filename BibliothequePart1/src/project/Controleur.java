@@ -73,7 +73,7 @@ public class Controleur extends HttpServlet {
 			page = "Accueil.jsp";
 			String test = request.getParameter("Statut");
 			if(request.getParameter("Statut")!=null){
-				if(request.getParameter("Statut").equals("Bibliothecaire")){
+				if(request.getParameter("Statut").equals("Bibliothecaire/")){
 					page = "Bibliothecaire.jsp";
 				} else if (request.getParameter("Statut").equals("Adherent/")){
 					page = "Adherent.jsp";
@@ -90,7 +90,7 @@ public class Controleur extends HttpServlet {
 			
 		}  else if (request.getParameter("AddBook") != null) {
 			String messageAjout = "ERROR: L'auteur et ou le titre n'ont pas été correctement definis";
-			if (request.getParameter("auteur") != null && request.getParameter("titre") != null) {
+			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {
 				bibli = Modele.ajouterLivre(request.getParameter("auteur"),request.getParameter("titre"), bibli);
  				messageAjout = "INFO: Ajout du livre "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" terminé";
 			}
