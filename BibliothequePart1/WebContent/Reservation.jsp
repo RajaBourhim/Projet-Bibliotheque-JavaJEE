@@ -1,5 +1,8 @@
 <%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, project.Livre " %>
 <link href="file.css" rel="stylesheet" type="text/css"  media="screen">
+
+<button type="submit" name="LivreResa" value="resa" class="btn btn-info">Afficher mes réservations</button>
+
 <% 	Livre livresReservation[] = (Livre[]) request.getAttribute("ListResa"); 
 	String statut = request.getParameter("statut");
 	String logged = (String)session.getAttribute("Logged");
@@ -8,7 +11,7 @@
 <%-- Partie liste Reservation --%>
 <% if(livresReservation != null) { %>
 <h3>Vous avez réservé <%=livresReservation.length%> livres (ci-dessous)</h3>
-	<table>
+	<table class="table">
 		<tr>
        		<td>Auteur</td>
        		<td>Titre</td>

@@ -1,23 +1,27 @@
 <%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, project.Livre " %>
-<link href="file.css" rel="stylesheet" type="text/css"  media="screen">
 <% 	Livre livresRecherches[] = (Livre[]) request.getAttribute("listData"); 
 	String statut = request.getParameter("statut");%>
 
 <%-- Partie Consultation --%>
 <h3>Rechercher un livre</h3>
-	<form action='Controleur' method='POST'>
-		auteur: <input type='text' name='auteur'/> 
-		titre: <input type='text' name='titre'/> 
-		<input type='submit' value='Rechercher'/> 
+	<form class="form-inline" action='Controleur' method='POST'>
+		<div class="form-group">
+    	<label for="auteur">Auteur:</label>
+    	<input type='text' name='auteur' class="form-control"/> 
+  		</div>
+  		<div class="form-group">
+    	<label for="titre">Titre:</label>
+    	<input type='text' name='titre' class="form-control"/> 
+  		</div>
+		<input class="btn btn-default" type='submit' value='Rechercher'/> 
 		<input type='hidden' name='EnterResearch' value='true'/> 
 		<input type='hidden' name='Statut' value=<%=statut %>/> 
 	</form>
-<%=request.getParameter("statut")%>
 
 
 <% if(livresRecherches != null) { %>
 <h3>Livres correspondants à votre recherche</h3>
-	<table>
+	<table class="table">
 		<tr>
        		<td>Auteur</td>
        		<td>Titre</td>
@@ -40,7 +44,7 @@
 			<td> <span class="titre"><%=livre.getNbLivresEmpruntes()%></span> </td>
 			<td> <span class="titre"><%=total%></span> </td>
 			
-			<form action="Recherche" method="POST">
+			<form action="Controleur" method="POST">
 				<%-- input type="hidden" name="livre" value="<%=livre.getIdLivre()%>"/> --%>
 				<% if (request.getParameter("titre") != null){ %>
 				<input type="hidden" name="titre" value="<%=request.getParameter("titre")%>"/>
@@ -52,9 +56,9 @@
 				<% if(statut.equals("Bibliothecaire") ){ %>
         		<td> 
         			<% 	if (livre.getNblivresDispo()>0){ %>
-        			<button type="submit" name="action" value="supp">Supprimer*</button>
-        			<button type="submit" name="action" value="ttsupp"> Tout Supprimer*</button>
-					<button type="submit" name="action" value="emprunt" >Emprunter</button>
+        			<button type="submit" name="Supprimer" value="Supprimer">Supprimer*</button>
+        			<button type="submit" name="SupprimerTout" value="ttsupp"> Tout Supprimer*</button>
+					<button type="submit" name="Emprunter" value="emprunt" >Emprunter</button>
 					<% } 
         				if (livre.getNbLivresEmpruntes()>0){ %> 
 					<button type="submit" name="action" value="emprunt">Restituer</button>
@@ -83,4 +87,3 @@
 		 <p> *Seuls les livres disponible peuvent être supprimés </p>
 		<% } %>
 
- 

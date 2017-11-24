@@ -24,6 +24,7 @@ public class Controleur extends HttpServlet {
 	protected boolean Login = false;
 	protected boolean Pass = false;
 	protected int indexUser;
+	protected String LoginValue = "";
 	/**
 	 * Default constructor.
 	 */
@@ -51,6 +52,7 @@ public class Controleur extends HttpServlet {
 				indexUser = Modele.recupererIndexUser(request.getParameter("login"), bibli);
 				session.setAttribute("Logged", request.getParameter("login"));
 				session.setAttribute("Login", "true");
+				LoginValue = request.getParameter("login");
 				session.setMaxInactiveInterval(30);
 				
 				if (!bibli.listUsers.get(indexUser).type) {
@@ -96,6 +98,31 @@ public class Controleur extends HttpServlet {
 			}
 			request.setAttribute("MessageAjout", messageAjout);
 		    RequestDispatcher rd = getServletContext()
+                    .getRequestDispatcher("/Bibliothecaire.jsp");
+		    rd.forward(request, response);
+		}  else if (request.getParameter("LivreResa") != null) {
+			
+			Livre listResa[] = Modele.recupererLivreReserves(LoginValue, bibli);
+			request.setAttribute("ListResa", listResa);
+			page = "Adherent.jsp";
+		    RequestDispatcher rd = getServletContext()
+                    .getRequestDispatcher("/"+page);
+		    rd.forward(request, response);
+			
+			
+		} else if (request.getParameter("Supprimer") != null) {
+			System.out.println("SUPPRIMER");
+			RequestDispatcher rd = getServletContext()
+                    .getRequestDispatcher("/Bibliothecaire.jsp");
+		    rd.forward(request, response);
+		}else if (request.getParameter("SupprimerTout") != null) {
+			System.out.println("TOUT SUPPRIMER");
+			RequestDispatcher rd = getServletContext()
+                    .getRequestDispatcher("/Bibliothecaire.jsp");
+		    rd.forward(request, response);
+		}else if (request.getParameter("Emprunter") != null) {
+			System.out.println("EMPRUNTER");
+			RequestDispatcher rd = getServletContext()
                     .getRequestDispatcher("/Bibliothecaire.jsp");
 		    rd.forward(request, response);
 		}

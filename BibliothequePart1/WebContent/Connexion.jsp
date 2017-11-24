@@ -4,8 +4,14 @@
 
 <%-- Partie Connexion --%>
 <h3>Connexion au portail</h3>
-	<form action='Controleur' method='POST'>
-		Login: <input type='text' name='login'/> 
-		Password: <input type='password' name='password'/> 
-		<input type='submit' value='Connecter'/> 
+	<form class="form-inline" action='Controleur' method='POST'>
+		<div class="form-group">
+    	<label for="login">Login:</label>
+    	<input type='text' name='login'class="form-control"/> 
+  		</div>
+  		<div class="form-group">
+    	<label for="pwd">Password:</label>
+    	<input type='password' name='password' class="form-control"/> 
+  		</div>
+		<input class="btn btn-default" type='submit' value='Connecter'/> 
 	</form>
