@@ -100,11 +100,52 @@ public class Modele {
 		return connect;
 	}
 
-	public static Livre[] consulteLivres() {
+	public static Livre[] consulteLivres(String auteur, String titre, Bibliotheque bibli) {
 		ArrayList<Livre> listResult = new ArrayList<>();
 		ArrayList<Livre> listResultFinal = new ArrayList<>();
 		Livre listR[] = null;
+		int indexLivre = -1;
+		int j =0;
+		
+		if (auteur != null) {
+			for (j = 0; j < bibli.listLivres.size(); j++) {
+				if (bibli.listLivres.get(j).auteur.equals(auteur)) {
+					indexLivre= j;
+					listResult.add(bibli.listLivres.get(j));
+				}
+			}
+		}
+		
+		if (titre.length()!=0) {
+			
+			if (listResult.size()>0) {
+				j = 0;
+				for (j = 0; j < listResult.size(); j++) {
+					
+					if (listResult.get(j).titre.equals(titre)) {
+						indexLivre = j;
+						listResultFinal.add(listResult.get(j));
+					}
+				}
 
+			} else {
+				j = 0;
+				for (j = 0; j < bibli.listLivres.size(); j++) {
+					if (bibli.listLivres.get(j).titre.equals(titre)) {
+						indexLivre = j;
+						listResultFinal.add(bibli.listLivres.get(j));
+					}
+				}
+			}
+		} else {
+			listResultFinal = listResult;
+		}
+		
+		if(listResultFinal.size()>0){
+			for (int k = 0; k<listResultFinal.size(); k++){
+				listR[k] = listResultFinal.get(k);
+			}
+		}
 		return listR;
 	}
 

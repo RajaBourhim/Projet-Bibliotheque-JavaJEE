@@ -47,6 +47,7 @@ public class Controleur extends HttpServlet {
 
 		if (request.getParameter("login") != null && request.getParameter("password") != null) {
 			logged = Modele.verifieConnexion(request.getParameter("login"),request.getParameter("password"),bibli);
+			
 			if (logged) {
 				session.setAttribute("Logged", request.getParameter("login"));
 				session.setAttribute("Login", "true");
@@ -61,6 +62,25 @@ public class Controleur extends HttpServlet {
 				System.out.println("Les identifiants ne sont pas corrects");
 				response.sendRedirect("Accueil.jsp");
 			}
+		}else if (request.getParameter("EnterResearch") != null) {
+			Livre listR[] = Modele.consulteLivres(request.getParameter("auteur"), request.getParameter("titre"), bibli);
+			
+			if(listR.length>0){
+				String page = "/Accueil.jsp";
+				if(request.getParameter("Statut")!=null){
+					System.out.println("BLABLA" +request.getParameter("Statut"));
+					if(request.getParameter("Statut").equals("Bibliothecaire")){
+						page = "/Bibliothecaire.jsp";
+					} else if (request.getParameter("Statut").equals("Adherent")){
+						page = "/Adherent.jsp";
+					}
+				}
+			    request.setAttribute("listData", listR);
+			    RequestDispatcher rd = getServletContext()
+			                               .getRequestDispatcher(page);
+			    rd.forward(request, response);
+			}
+			
 		}
 		// Log in failed
 		else {
