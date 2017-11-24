@@ -23,13 +23,12 @@ public class Controleur extends HttpServlet {
 	protected boolean logged = false;
 	protected boolean Login = false;
 	protected boolean Pass = false;
-	protected int indexUser = -1;
+	protected int indexUser;
 	/**
 	 * Default constructor.
 	 */
 	public Controleur() {
 		// TODO Auto-generated constructor stub
-		
 		bibli = Modele.creerBibliotheque();
 		indexUser = -1;
 
@@ -49,13 +48,17 @@ public class Controleur extends HttpServlet {
 			logged = Modele.verifieConnexion(request.getParameter("login"),request.getParameter("password"),bibli);
 			
 			if (logged) {
+				
+				indexUser = Modele.recupererIndexUser(request.getParameter("login"), bibli);
 				session.setAttribute("Logged", request.getParameter("login"));
 				session.setAttribute("Login", "true");
 				session.setMaxInactiveInterval(30);
 				if (!bibli.listUsers.get(indexUser).type) {
 					response.sendRedirect("Adherent.jsp");
+					session.setAttribute("Adherent", "true");
 				} else {
 					response.sendRedirect("Bibliothecaire.jsp");
+					session.setAttribute("Bibliothecaire", "true");
 				}
 
 			} else {
@@ -65,13 +68,14 @@ public class Controleur extends HttpServlet {
 		}else if (request.getParameter("EnterResearch") != null) {
 			Livre listR[] = Modele.consulteLivres(request.getParameter("auteur"), request.getParameter("titre"), bibli);
 			
-			if(listR.length>0){
+			if(listR!=null){
 				String page = "/Accueil.jsp";
+				String test = request.getParameter("Statut");
 				if(request.getParameter("Statut")!=null){
 					System.out.println("BLABLA" +request.getParameter("Statut"));
 					if(request.getParameter("Statut").equals("Bibliothecaire")){
 						page = "/Bibliothecaire.jsp";
-					} else if (request.getParameter("Statut").equals("Adherent")){
+					} else if (request.getParameter("Statut").equals("Adherent/")){
 						page = "/Adherent.jsp";
 					}
 				}

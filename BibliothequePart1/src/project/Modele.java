@@ -1,5 +1,6 @@
 package project;
 
+import java.awt.List;
 import java.util.ArrayList;
 
 public class Modele {
@@ -141,11 +142,16 @@ public class Modele {
 			listResultFinal = listResult;
 		}
 		
+		
 		if(listResultFinal.size()>0){
+			listR = new Livre[listResultFinal.size()];
 			for (int k = 0; k<listResultFinal.size(); k++){
 				listR[k] = listResultFinal.get(k);
+				
 			}
-		}
+		} 
+		
+		System.out.println(listResultFinal.size());
 		return listR;
 	}
 
@@ -211,16 +217,23 @@ public class Modele {
 	}
 
 	public static int recupererIndexLivre(String titre, String auteur, Bibliotheque bibli) {
-
 		int indexLivre = -1;
-
 		for (int i = 0; i < bibli.listLivres.size(); i++) {
 			if (bibli.listLivres.get(i).titre.equals(titre)) {
 				indexLivre = i;
 			}
 		}
-
 		return indexLivre;
+	}
+	
+	public static int recupererIndexUser(String login, Bibliotheque bibli) {
+		int indexUser = -1;
+		for (int i = 0; i < bibli.listUsers.size(); i++) {
+			if (bibli.listUsers.get(i).identifiant.equals(login)) {
+				indexUser = i;
+			}
+		}
+		return indexUser;
 	}
 
 	public static Occupation trouverOccupation(int idAdherent, int idLivre, Bibliotheque bibli) {

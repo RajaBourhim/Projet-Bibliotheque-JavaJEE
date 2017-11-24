@@ -9,14 +9,9 @@
 <title>Accueil</title>
 </head>
 
-<%-- Partie Connexion --%>
-<h3>Connexion au portail</h3>
-	<form action='Controleur' method='POST'>
-		Login: <input type='text' name='login'/> 
-		Password: <input type='password' name='password'/> 
-		<input type='submit' value='Connecter'/> 
-	</form>
-
+ <jsp:include page="Connexion.jsp">
+        <jsp:param name="statut" value="Accueil"/>
+  </jsp:include>
 
  <jsp:include page="Recherche.jsp">
         <jsp:param name="statut" value="Accueil"/>

@@ -5,13 +5,13 @@
 	String statut = request.getParameter("statut");%>
 
 <%-- Partie Consultation --%>
-<h3>Consultation des documents</h3>
-	<form action='Consultation' method='POST'>
+<h3>Rechercher un livre</h3>
+	<form action='Controleur' method='POST'>
 		auteur: <input type='text' name='auteur'/> 
 		titre: <input type='text' name='titre'/> 
 		<input type='submit' value='Rechercher'/> 
 		<input type='hidden' name='EnterResearch' value='true'/> 
-		<input type='hidden' name='Statut' value=statut/> 
+		<input type='hidden' name='Statut' value=<%=statut %>/> 
 	</form>
 <%=request.getParameter("statut")%>
 
