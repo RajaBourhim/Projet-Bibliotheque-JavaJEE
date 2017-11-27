@@ -139,7 +139,21 @@ public class Controleur extends HttpServlet {
 			RequestDispatcher rd = getServletContext()
                     .getRequestDispatcher("/Bibliothecaire.jsp");
 		    rd.forward(request, response);
-		// Annuler reservation d'un livre
+		// Reservation d'un livre 
+		} else if (request.getParameter("Reserver") != null){
+			String messageResa = "ERROR: Cette réservation n'a pas pu être réalisée";
+			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {
+				bibli = Modele.reserveLivre(request.getParameter("auteur"), request.getParameter("titre"),LoginValue, bibli);
+ 				messageResa = "INFO: Reservation du livre "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" effectuée";
+			}
+			request.setAttribute("MessageResa", messageResa);
+			Livre listResa[] = Modele.recupererLivreReserves(LoginValue, bibli);
+			request.setAttribute("ListResa", listResa);
+			page = "Adherent.jsp";
+		    RequestDispatcher rd = getServletContext()
+                    .getRequestDispatcher("/"+page);
+		    rd.forward(request, response);	
+			
 		} else if (request.getParameter("DeReserver") != null){
 			String messageResa = "ERROR: Cette réservation n'a pas pu être annulée";
 			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {

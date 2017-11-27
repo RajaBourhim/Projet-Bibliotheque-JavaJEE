@@ -73,9 +73,9 @@
 				<% if(statut.equals("Adherent") ){ %>
         		<td> 
         			<% if (livre.getNblivresDispo()>0){ %>
-        			<button type="submit" name="action" value="reserver" class="btn btn-success">Reserver</button>
+        			<button type="submit" name="Reserver" class="btn btn-success" value="Reserver">Réserver</button>
 					<% } if (livre.getNbLivresEmpruntes()>0){ %> 
-					<button type="submit" name="action" value="dereserver" class="btn btn-warning">Dé-réserver</button>
+					<button type="submit" name="DeReserver" class="btn btn-warning" value="DeReserver">Dé-réserver</button>
 					<% } %>
         	    </td>  		
        			<%} %>
