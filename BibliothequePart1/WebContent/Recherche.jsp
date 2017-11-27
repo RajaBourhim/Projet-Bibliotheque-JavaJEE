@@ -56,12 +56,12 @@
 				<% if(statut.equals("Bibliothecaire") ){ %>
         		<td> 
         			<% 	if (livre.getNblivresDispo()>0){ %>
-        			<button type="submit" name="Supprimer" value="Supprimer">Supprimer*</button>
-        			<button type="submit" name="SupprimerTout" value="ttsupp"> Tout Supprimer*</button>
-					<button type="submit" name="Emprunter" value="emprunt" >Emprunter</button>
+        			<button type="submit" name="Supprimer" value="Supprimer" class="btn btn-danger">Supprimer*</button>
+        			<button type="submit" name="SupprimerTout" value="ttsupp" class="btn btn-danger"> Tout Supprimer*</button>
+					<button type="submit" name="Emprunter" value="emprunt" class="btn btn-success">Emprunter</button>
 					<% } 
         				if (livre.getNbLivresEmpruntes()>0){ %> 
-					<button type="submit" name="action" value="emprunt">Restituer</button>
+					<button type="submit" name="action" value="emprunt" class="btn btn-warning">Restituer</button>
 					<% } %>
         	    </td>  		
        			<%} %>
@@ -71,9 +71,9 @@
 				<% if(statut.equals("Adherent") ){ %>
         		<td> 
         			<% if (livre.getNblivresDispo()>0){ %>
-        			<button type="submit" name="action" value="reserver">Reserver</button>
+        			<button type="submit" name="action" value="reserver" class="btn btn-success">Reserver</button>
 					<% } if (livre.getNbLivresEmpruntes()>0){ %> 
-					<button type="submit" name="action" value="emprunt">Restituer</button>
+					<button type="submit" name="action" value="dereserver" class="btn btn-warning">Dé-réserver</button>
 					<% } %>
         	    </td>  		
        			<%} %>

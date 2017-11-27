@@ -1,7 +1,10 @@
 <%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, project.Livre " %>
 <link href="file.css" rel="stylesheet" type="text/css"  media="screen">
 
-<button type="submit" name="LivreResa" value="resa" class="btn btn-info">Afficher mes réservations</button>
+	<form class="form-inline" action='Controleur' method='POST'>
+		<input class="btn btn-info" type='submit' value='Afficher mes réservations'/> 
+		<input type='hidden' name='LivreResa' value='true'/> 
+	</form>
 
 <% 	Livre livresReservation[] = (Livre[]) request.getAttribute("ListResa"); 
 	String statut = request.getParameter("statut");
@@ -34,7 +37,7 @@
 				<input type="hidden" name="auteur" value="<%=request.getParameter("auteur")%>"/>
 				<% } %> 							
         		<td> 
-        			<button type="submit" name="action" value="Dereserver">DeReserver</button>
+        			<button type="submit" name="action" class="btn btn-warning" value="DeReserver">Dé-réserver</button>
         	    </td>  		
 			</form>
 			<% } %>

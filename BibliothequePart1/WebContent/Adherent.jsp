@@ -19,7 +19,8 @@
  <jsp:include page="Recherche.jsp">
         <jsp:param name="statut" value="Adherent"/>
   </jsp:include>
-
+</BR>
+</BR>
 <%-- Partie Gestion de mes livres --%>
  <jsp:include page="Reservation.jsp">
         <jsp:param name="statut" value="Adherent"/>
