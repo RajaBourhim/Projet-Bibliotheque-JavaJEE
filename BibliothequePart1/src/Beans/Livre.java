@@ -1,4 +1,4 @@
-package project;
+package Beans;
 public class Livre {
 	
 	protected int idLivre;
@@ -18,24 +18,6 @@ public class Livre {
 		this.nbLivresReserves = nbLivresReserves;
 		this.nbLivresEmpruntes = nbLivresEmpruntes;
 		
-	}
-
-	
-	public void reserver(){
-		if(this.nblivresDispo==0){
-			System.out.println("Il n'y a pas d'exemplaire de libre.");
-		}else{
-			//Modifier statut dans Occupation
-			this.nbLivresReserves++;
-			this.nblivresDispo--;
-		}
-	}
-	
-	public void annulerReservation(){
-		//Modifier statut dans Occupation
-		this.nbLivresReserves--;
-		this.nblivresDispo++;
-		System.out.println("L'annulation est un succès.");
 	}
 
 	public String getTitre() {

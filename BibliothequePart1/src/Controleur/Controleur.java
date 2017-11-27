@@ -1,4 +1,4 @@
-package project;
+package Controleur;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.text.html.HTMLDocument.Iterator;
+
+import Beans.Bibliotheque;
+import Beans.Livre;
+import Beans.Modele;
 
 /**
  * Servlet implementation class ProcessConnexion
@@ -56,7 +60,7 @@ public class Controleur extends HttpServlet {
 				LoginValue = request.getParameter("login");
 				session.setMaxInactiveInterval(30);
 				
-				if (!bibli.listUsers.get(indexUser).type) {
+				if (!bibli.getListUsers().get(indexUser).isType()) {
 					Livre listResa[] = Modele.recupererLivreReserves(request.getParameter("login"), bibli);
 					request.setAttribute("ListResa", listResa);
 					page = "Adherent.jsp";
@@ -152,7 +156,7 @@ public class Controleur extends HttpServlet {
 			page = "Adherent.jsp";
 		    RequestDispatcher rd = getServletContext()
                     .getRequestDispatcher("/"+page);
-		    rd.forward(request, response);	
+		   rd.forward(request, response);	
 			
 		} else if (request.getParameter("DeReserver") != null){
 			String messageResa = "ERROR: Cette réservation n'a pas pu être annulée";

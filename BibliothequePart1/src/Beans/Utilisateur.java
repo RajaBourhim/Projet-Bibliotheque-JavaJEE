@@ -1,4 +1,4 @@
-package project;
+package Beans;
 
 public class Utilisateur {
 	
@@ -16,9 +16,14 @@ public class Utilisateur {
 		this.idUtilisateur = idUtilisateur;
 	}
 	
-	
-	
-	
+	public int getIdUtilisateur() {
+		return idUtilisateur;
+	}
+
+	public void setIdUtilisateur(int idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
+	}
+
 	public String getIdentifiant() {
 		return identifiant;
 	}

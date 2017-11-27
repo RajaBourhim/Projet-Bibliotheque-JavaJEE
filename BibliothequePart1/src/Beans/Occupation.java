@@ -1,4 +1,4 @@
-package project;
+package Beans;
 
 public class Occupation {
 	

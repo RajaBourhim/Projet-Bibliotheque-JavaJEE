@@ -1,4 +1,4 @@
-package project;
+package Beans;
 
 import java.awt.List;
 import java.util.ArrayList;
@@ -201,7 +201,7 @@ public class Modele {
 
 		Livre monLivre = bibli.listLivres.get(recupererIndexLivre(titre, auteur, bibli));
 
-		monLivre.reserver();
+		monLivre = reserver(monLivre);
 		bibli.listOccupations.add(monOccup);
 
 		return bibli;
@@ -215,7 +215,7 @@ public class Modele {
 
 		Livre monLivre = bibli.listLivres.get(recupererIndexLivre(titre, auteur, bibli));
 
-		monLivre.annulerReservation();
+		monLivre = annulerReservation(monLivre);
 		bibli.listOccupations.remove(trouverOccupation(idUser, idLivre, bibli));
 
 		return bibli;
@@ -355,4 +355,27 @@ public class Modele {
 		}
 		return bibli;
 	}
+	
+
+	public static Livre reserver(Livre monLivre){
+		if(monLivre.nblivresDispo==0){
+			System.out.println("Il n'y a pas d'exemplaire de libre.");
+		}else{
+			//Modifier statut dans Occupation
+			monLivre.nbLivresReserves++;
+			monLivre.nblivresDispo--;
+		}
+		
+		return monLivre;
+	}
+	
+	public static Livre annulerReservation(Livre monLivre){
+		//Modifier statut dans Occupation
+		monLivre.nbLivresReserves--;
+		monLivre.nblivresDispo++;
+		System.out.println("L'annulation est un succès.");
+		return monLivre;
+	}
+	
+	
 }
