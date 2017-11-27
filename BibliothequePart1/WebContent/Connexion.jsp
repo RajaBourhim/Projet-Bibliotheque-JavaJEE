@@ -1,4 +1,4 @@
-<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, project.Livre " %>
+<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, Beans.Livre " %>
 <link href="file.css" rel="stylesheet" type="text/css"  media="screen">
 <% String statut = request.getParameter("statut");%>
 

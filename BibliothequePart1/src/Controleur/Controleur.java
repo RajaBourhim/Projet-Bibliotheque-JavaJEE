@@ -139,11 +139,27 @@ public class Controleur extends HttpServlet {
 		    rd.forward(request, response);    
 		// Emprunt dun livre
 		}else if (request.getParameter("Emprunter") != null) {
-			System.out.println("EMPRUNTER");
+			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {
+				request.setAttribute("auteur", request.getParameter("auteur"));
+				request.setAttribute("titre", request.getParameter("titre"));
+				RequestDispatcher rd = getServletContext()
+                    .getRequestDispatcher("/Emprunt.jsp");
+				rd.forward(request, response);
+			}
+		// Valider emprunt d'un livre
+		}  else if (request.getParameter("ValiderEmprunt") != null){
+			String messageResult = "ERROR: Cet exemplaire n'a pas pu être emprunté";
+			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0 && request.getParameter("Identifiant")!=null) {
+				if(Modele.emprunterLivre(request.getParameter("auteur"), request.getParameter("titre"), request.getParameter("Identifiant"), bibli)!=null){
+					bibli = Modele.emprunterLivre(request.getParameter("auteur"), request.getParameter("titre"), request.getParameter("Identifiant"), bibli);
+					messageResult = "INFO: Un exemplaire de "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" a été bien été emprunté par "+request.getParameter("Identifiant") ;
+				}
+			}
+			request.setAttribute("MessageResult", messageResult);
 			RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/Bibliothecaire.jsp");
-		    rd.forward(request, response);
-		// Reservation d'un livre 
+                .getRequestDispatcher("/Bibliothecaire.jsp");
+			rd.forward(request, response);
+		
 		} else if (request.getParameter("Reserver") != null){
 			String messageResa = "ERROR: Cette réservation n'a pas pu être réalisée";
 			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {

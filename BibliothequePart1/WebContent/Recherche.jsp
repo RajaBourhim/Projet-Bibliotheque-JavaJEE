@@ -1,4 +1,4 @@
-<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, project.Livre " %>
+<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, Beans.Livre " %>
 <% 	Livre livresRecherches[] = (Livre[]) request.getAttribute("listData"); 
 	String statut = request.getParameter("statut");
 	String messageResearch = (String)request.getAttribute("MessageResearch");
@@ -61,7 +61,7 @@
         			<% 	if (livre.getNblivresDispo()>0){ %>
         			<button type="submit" name="Supprimer" value="Supprimer" class="btn btn-danger">Supprimer*</button>
         			<button type="submit" name="SupprimerTout" value="ttsupp" class="btn btn-danger"> Tout Supprimer*</button>
-					<button type="submit" name="Emprunter" value="emprunt" class="btn btn-success">Emprunter</button>
+					<button type="submit" name="Emprunter" value="Emprunter" class="btn btn-success">Emprunter</button>
 					<% } 
         				if (livre.getNbLivresEmpruntes()>0){ %> 
 					<button type="submit" name="action" value="emprunt" class="btn btn-warning">Restituer</button>

@@ -123,7 +123,7 @@ public class Modele {
 		// On recherche par titre si un titre a été saisi
 		if (titre.length()!=0) {
 			//Si la recherche par auteur a obtenu des resultats - on va se baser sur ces derniers
-			if (listResult.size()>0) {
+			if (listResult.size()>0 & auteur!=null) {
 				j = 0;
 				for (j = 0; j < listResult.size(); j++) {
 					if (listResult.get(j).titre.equals(titre)) {
@@ -221,6 +221,24 @@ public class Modele {
 		return bibli;
 	}
 
+	//Methode qui permet d'emprunter un livre 
+	public static Bibliotheque emprunterLivre(String auteur, String titre, String login, Bibliotheque bibli){
+		
+		Bibliotheque maBibli =null;
+		int idUser = recupererIdUser(login, bibli);
+		int idLivre = recupererIdLivre(titre,auteur,bibli);
+		Occupation monOccup = trouverOccupation(idUser,idLivre,bibli);
+		if(idUser!=-1 && idLivre!=-1){
+			maBibli =bibli;
+			if(monOccup!=null && monOccup.getStatutLivre().equals(Statut.RESERVE)){
+				maBibli.listOccupations.remove(monOccup);			
+			}
+			monOccup = new Occupation(idUser,idLivre,Statut.EMPRUNTE);		
+			maBibli.listOccupations.add(monOccup);
+		}
+		return maBibli ;
+	}
+	
 	public static int recupererIdUser(String login, Bibliotheque bibli) {
 		int idUser = -1;
 		int indexUser = -1;
@@ -287,6 +305,7 @@ public class Modele {
 	}
 
 	public static Occupation trouverOccupation(int idAdherent, int idLivre, Bibliotheque bibli) {
+
 		Occupation occupationARetourner = null;
 		ArrayList<Occupation> listOccup = new ArrayList();
 
@@ -304,7 +323,8 @@ public class Modele {
 
 		return occupationARetourner;
 	}
-	
+
+ 
 	public static Bibliotheque ajouterLivre(String auteur, String titre, Bibliotheque bibli) {
 		int indexLivre = -1;
 		int j;

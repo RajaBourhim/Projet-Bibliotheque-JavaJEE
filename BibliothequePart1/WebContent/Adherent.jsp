@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<% 	String logged = (String)session.getAttribute("Logged");%>
+<% 	String logged = (String)session.getAttribute("Logged");
+    String statut = "Adherent";
+%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -10,28 +12,26 @@
 </head>
 <body>
 
-<table>
-	<tr> 
-		<td><h1> Bonjour <%=logged%>, bienvenue dans votre espace personnel</h1></td>
-		<td><form class="form-inline" action='Controleur' method='POST'>
-				<input class="btn btn-danger" type='submit' value='Déconnexion'/> 
-				<input type='hidden' name='Deconnection' value='true'/> 
-			</form>
-		</td>
-	</tr>
-</table>
+<%-- Partie header --%>
+ <jsp:include page="Header.jsp">
+        <jsp:param name="Statut" value="<%=statut%>"/>
+        <jsp:param name="Logged" value="<%= logged %>"/>
+  </jsp:include>
+
+
+
 <%-- Partie réservation d'un livre --%>
 <%-- afficher la liste des livres --%>
 
 <%-- Partie rechercher --%>
  <jsp:include page="Recherche.jsp">
-        <jsp:param name="statut" value="Adherent"/>
+        <jsp:param name="statut" value="<%=statut%>"/>
   </jsp:include>
-</BR>
-</BR>
+
+
 <%-- Partie Gestion de mes livres --%>
  <jsp:include page="Reservation.jsp">
-        <jsp:param name="statut" value="Adherent"/>
+        <jsp:param name="statut" value="<%=statut%>"/>
   </jsp:include>
 
 <%-- Afficher la liste des livres réservés avec un bouton déréserver pour chaque livre--%>
