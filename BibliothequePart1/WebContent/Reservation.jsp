@@ -30,12 +30,12 @@
 		<tr>
 			<td> <span class="auteur"><%=livre.getAuteur()%></span> </td>
 			<td> <span class="titre"><%=livre.getTitre()%></span> </td>
-			<form action="Reserver" method="POST">
+			<form action="Controleur" method="POST">
 				<%-- input type="hidden" name="livre" value="<%=livre.getIdLivre()%>"/> --%>
-				<% if (request.getParameter("titre") != null){ %>
-				<input type="hidden" name="titre" value="<%=request.getParameter("titre")%>"/>
-				<% } if (request.getParameter("auteur") != null){ %> 
-				<input type="hidden" name="auteur" value="<%=request.getParameter("auteur")%>"/>
+				<% if (livre.getTitre()!= null){ %>
+				<input type="hidden" name="titre" value="<%=livre.getTitre()%>"/>
+				<% } if (livre.getAuteur() != null){ %> 
+				<input type="hidden" name="auteur" value="<%=livre.getAuteur()%>"/>
 				<% } %> 							
         		<td> 
         			<button type="submit" name="DeReserver" class="btn btn-warning" value="DeReserver">Dé-réserver</button>

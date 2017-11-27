@@ -139,6 +139,7 @@ public class Controleur extends HttpServlet {
 			RequestDispatcher rd = getServletContext()
                     .getRequestDispatcher("/Bibliothecaire.jsp");
 		    rd.forward(request, response);
+		// Annuler reservation d'un livre
 		} else if (request.getParameter("DeReserver") != null){
 			String messageResa = "ERROR: Cette réservation n'a pas pu être annulée";
 			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {
