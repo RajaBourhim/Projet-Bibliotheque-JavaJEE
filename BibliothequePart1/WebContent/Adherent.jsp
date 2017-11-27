@@ -10,8 +10,16 @@
 </head>
 <body>
 
-<h1> Bonjour <%=logged%>, bienvenue dans votre espace personnel</h1>
-
+<table>
+	<tr> 
+		<td><h1> Bonjour <%=logged%>, bienvenue dans votre espace personnel</h1></td>
+		<td><form class="form-inline" action='Controleur' method='POST'>
+				<input class="btn btn-danger" type='submit' value='Déconnexion'/> 
+				<input type='hidden' name='Deconnection' value='true'/> 
+			</form>
+		</td>
+	</tr>
+</table>
 <%-- Partie réservation d'un livre --%>
 <%-- afficher la liste des livres --%>
 

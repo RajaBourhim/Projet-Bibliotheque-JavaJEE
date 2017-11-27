@@ -1,17 +1,19 @@
 <%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, project.Livre " %>
 <link href="file.css" rel="stylesheet" type="text/css"  media="screen">
-
-	<form class="form-inline" action='Controleur' method='POST'>
-		<input class="btn btn-info" type='submit' value='Afficher mes réservations'/> 
-		<input type='hidden' name='LivreResa' value='true'/> 
-	</form>
-
 <% 	Livre livresReservation[] = (Livre[]) request.getAttribute("ListResa"); 
 	String statut = request.getParameter("statut");
 	String logged = (String)session.getAttribute("Logged");
 	String messageResa = (String)request.getAttribute("MessageResa");
 
 %>
+		
+	<% if(messageResa!=null){%> <p> MESSAGE <%=messageResa%><%} %></p>
+	
+	<form class="form-inline" action='Controleur' method='POST'>
+		<input class="btn btn-info" type='submit' value='Afficher mes réservations'/> 
+		<input type='hidden' name='LivreResa' value='true'/> 
+	</form>
+	
 <%-- Partie liste Reservation --%>
 <% if(livresReservation != null) { %>
 <h3>Vous avez réservé <%=livresReservation.length%> livres (ci-dessous)</h3>
@@ -45,7 +47,4 @@
 					</tr>
 	</table>
 		<% } %>
-		
-		 <% if(messageResa!=null){%> <p> MESSAGE <%=messageResa%><%} %></p>
-
  

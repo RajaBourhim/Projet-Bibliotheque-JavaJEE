@@ -4,6 +4,7 @@
 	String messageResearch = (String)request.getAttribute("MessageResearch");
 	%>
 
+<% if(messageResearch!=null){%> <p> MESSAGE <%=messageResearch%><%} %></p>
 <%-- Partie Consultation --%>
 <h3>Rechercher un livre</h3>
 	<form class="form-inline" action='Controleur' method='POST'>
@@ -88,6 +89,3 @@
 	</table>
 		 <p> *Seuls les livres disponible peuvent être supprimés </p>
 		<% } %>
-
-
-	 <% if(messageResearch!=null){%> <p> MESSAGE <%=messageResearch%><%} %></p>

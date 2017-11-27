@@ -155,6 +155,7 @@ public class Modele {
 		return listR;
 	}
 
+	// Methode qui permet de récupérer la liste des livres reserves 
 	public static Livre[] recupererLivreReserves(String login, Bibliotheque bibli){
 		ArrayList<Occupation> listResultOccup = new ArrayList<>();
 		ArrayList<Livre> listResultFinal = new ArrayList<>();
@@ -191,6 +192,7 @@ public class Modele {
 		return listR;
 	}
 	
+	// Methode qui permet de reserver un livre 
 	public static Bibliotheque reserveLivre(String auteur, String titre, String login, Bibliotheque bibli) {
 
 		int idUser = recupererIdUser(login, bibli);
@@ -205,6 +207,7 @@ public class Modele {
 		return bibli;
 	}
 
+	// Methode qui permet l'annulation d'un livre
 	public static Bibliotheque annulerReservationLivre(String auteur, String titre, String login, Bibliotheque bibli) {
 
 		int idUser = recupererIdUser(login, bibli);
