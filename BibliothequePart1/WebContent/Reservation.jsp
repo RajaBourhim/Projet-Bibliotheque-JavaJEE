@@ -9,6 +9,7 @@
 <% 	Livre livresReservation[] = (Livre[]) request.getAttribute("ListResa"); 
 	String statut = request.getParameter("statut");
 	String logged = (String)session.getAttribute("Logged");
+	String messageResa = (String)request.getAttribute("MessageResa");
 
 %>
 <%-- Partie liste Reservation --%>
@@ -37,12 +38,14 @@
 				<input type="hidden" name="auteur" value="<%=request.getParameter("auteur")%>"/>
 				<% } %> 							
         		<td> 
-        			<button type="submit" name="action" class="btn btn-warning" value="DeReserver">Dé-réserver</button>
+        			<button type="submit" name="DeReserver" class="btn btn-warning" value="DeReserver">Dé-réserver</button>
         	    </td>  		
 			</form>
 			<% } %>
 					</tr>
 	</table>
 		<% } %>
+		
+		 <% if(messageResa!=null){%> <p> MESSAGE <%=messageResa%><%} %></p>
 
  

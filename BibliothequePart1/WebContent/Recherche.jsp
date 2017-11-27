@@ -1,6 +1,8 @@
 <%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, project.Livre " %>
 <% 	Livre livresRecherches[] = (Livre[]) request.getAttribute("listData"); 
-	String statut = request.getParameter("statut");%>
+	String statut = request.getParameter("statut");
+	String messageResearch = (String)request.getAttribute("MessageResearch");
+	%>
 
 <%-- Partie Consultation --%>
 <h3>Rechercher un livre</h3>
@@ -46,10 +48,10 @@
 			
 			<form action="Controleur" method="POST">
 				<%-- input type="hidden" name="livre" value="<%=livre.getIdLivre()%>"/> --%>
-				<% if (request.getParameter("titre") != null){ %>
-				<input type="hidden" name="titre" value="<%=request.getParameter("titre")%>"/>
-				<% } if (request.getParameter("auteur") != null){ %> 
-				<input type="hidden" name="auteur" value="<%=request.getParameter("auteur")%>"/>
+				<% if (livre.getTitre() != null){ %>
+				<input type="hidden" name="titre" value="<%=livre.getTitre()%>"/>
+				<% } if (livre.getAuteur() != null){ %> 
+				<input type="hidden" name="auteur" value="<%=livre.getAuteur()%>"/>
 				<% } %>
 				
 				<%-- Si la personne est bibliothecaire --%>
@@ -87,3 +89,5 @@
 		 <p> *Seuls les livres disponible peuvent être supprimés </p>
 		<% } %>
 
+
+	 <% if(messageResearch!=null){%> <p> MESSAGE <%=messageResearch%><%} %></p>

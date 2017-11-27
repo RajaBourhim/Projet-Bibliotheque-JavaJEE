@@ -324,4 +324,32 @@ public class Modele {
 		return bibli;
 	}
 
+	//On supprime un livre dispo
+	public static Bibliotheque supprimerLivre (String auteur, String titre, Bibliotheque bibli){
+		if(auteur != null && titre !=null){
+			int indexLivre = recupererIndexLivre(titre,auteur,bibli);
+			bibli.listLivres.get(indexLivre).nblivresDispo --;
+			if(bibli.listLivres.get(indexLivre).nblivresDispo==0 && 
+					bibli.listLivres.get(indexLivre).nbLivresEmpruntes==0 && 
+					bibli.listLivres.get(indexLivre).nbLivresReserves==0) {				
+				bibli.listLivres.remove(indexLivre);
+			}
+		}
+		
+		return bibli;	
+	}
+	
+	//On supprime uniquement les livres dispo
+	public static Bibliotheque supprimerTout (String auteur, String titre, Bibliotheque bibli){
+		if(auteur != null && titre !=null){
+			int indexLivre = recupererIndexLivre(titre,auteur,bibli);
+			bibli.listLivres.get(indexLivre).nblivresDispo = 0;
+			if(bibli.listLivres.get(indexLivre).nblivresDispo==0 && 
+					bibli.listLivres.get(indexLivre).nbLivresEmpruntes==0 && 
+					bibli.listLivres.get(indexLivre).nbLivresReserves==0) {				
+				bibli.listLivres.remove(indexLivre);
+			}
+		}
+		return bibli;
+	}
 }
