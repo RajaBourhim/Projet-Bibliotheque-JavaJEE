@@ -27,7 +27,7 @@
 		Livre listR[] = new Livre[livresReservation.length];
 		for(int i = 0; i<	livresReservation.length; i++){
 		Livre livre = livresReservation[i];
-		int total = livre.getNblivresDispo() + livre.getNbLivresReserves() + livre.getNbLivresEmpruntes(); 
+		int total = livre.getNbLivresDispo() + livre.getNbLivresReserves() + livre.getNbLivresEmpruntes(); 
 		%>
 		<tr>
 			<td> <span class="auteur"><%=livre.getAuteur()%></span> </td>

@@ -16,6 +16,7 @@ import javax.swing.text.html.HTMLDocument.Iterator;
 import Beans.Bibliotheque;
 import Beans.Livre;
 import Beans.Modele;
+import Beans.Utilisateur;
 
 /**
  * Servlet implementation class ProcessConnexion
@@ -67,13 +68,9 @@ public class Controleur extends HttpServlet {
 				} else {
 					page = "Bibliothecaire.jsp";
 				}
-			    RequestDispatcher rd = getServletContext()
-			                               .getRequestDispatcher("/"+page);
-			    rd.forward(request, response);
 
 			} else {
 				System.out.println("Les identifiants ne sont pas corrects");
-				response.sendRedirect(page);
 			}
 		// Consulation des livres
 		} else if (request.getParameter("EnterResearch") != null) {
@@ -89,13 +86,7 @@ public class Controleur extends HttpServlet {
 			}
 			if(listR!=null){
 			    request.setAttribute("listData", listR);
-			    RequestDispatcher rd = getServletContext()
-			                               .getRequestDispatcher("/"+page);
-			    rd.forward(request, response);
-			} else {
-				response.sendRedirect(page);
 			}
-			
 		// Ajout d'un livre
 		}  else if (request.getParameter("AddBook") != null) {
 			String messageResearch = "ERROR: L'auteur et ou le titre n'ont pas été correctement definis";
@@ -104,17 +95,12 @@ public class Controleur extends HttpServlet {
 				messageResearch = "INFO: Ajout du livre "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" terminé";
 			}
 			request.setAttribute("MessageResearch", messageResearch);
-		    RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/Bibliothecaire.jsp");
-		    rd.forward(request, response);
+			page = "Bibliothecaire.jsp";
 		//Affichage des réservation
 		}  else if (request.getParameter("LivreResa") != null) {		
 			Livre listResa[] = Modele.recupererLivreReserves(LoginValue, bibli);
 			request.setAttribute("ListResa", listResa);
-			page = "Adherent.jsp";
-		    RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/"+page);
-		    rd.forward(request, response);	
+			page = "Adherent.jsp";	
 		//Suppression d'un livre
 		} else if (request.getParameter("Supprimer") != null) {	
 			String messageResearch = "ERROR: Cet exemplaire n'a pas pu être supprimé";
@@ -123,9 +109,7 @@ public class Controleur extends HttpServlet {
 				messageResearch = "INFO: Suppression d'un exemplaire du livre "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" terminé";
 			}
 			request.setAttribute("MessageResearch", messageResearch);
-		    RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/Bibliothecaire.jsp");
-		    rd.forward(request, response);
+			page = "Bibliothecaire.jsp";
 		// Suppression de tous les livre
 		}else if (request.getParameter("SupprimerTout") != null) {
 			String messageResearch = "ERROR: Ce livre n'a pas pu être supprimé";
@@ -134,17 +118,13 @@ public class Controleur extends HttpServlet {
  				messageResearch = "INFO: Suppression de tous les exemplaires disponibles du livre "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" terminé";
 			}
 			request.setAttribute("MessageResearch", messageResearch);
-		    RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/Bibliothecaire.jsp");
-		    rd.forward(request, response);    
+			page = "Bibliothecaire.jsp"; 
 		// Emprunt dun livre
 		}else if (request.getParameter("Emprunter") != null) {
 			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {
 				request.setAttribute("auteur", request.getParameter("auteur"));
 				request.setAttribute("titre", request.getParameter("titre"));
-				RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/Emprunt.jsp");
-				rd.forward(request, response);
+				page = "Emprunt.jsp";
 			}
 		// Valider emprunt d'un livre
 		}  else if (request.getParameter("ValiderEmprunt") != null){
@@ -155,11 +135,28 @@ public class Controleur extends HttpServlet {
 					messageResult = "INFO: Un exemplaire de "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" a été bien été emprunté par "+request.getParameter("Identifiant") ;
 				}
 			}
-			request.setAttribute("MessageResult", messageResult);
-			RequestDispatcher rd = getServletContext()
-                .getRequestDispatcher("/Bibliothecaire.jsp");
-			rd.forward(request, response);
+			request.setAttribute("MessageResult", messageResult);	
+			page = "Bibliothecaire.jsp";
 		
+		} else if(request.getParameter("Restituer") != null){
+			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {
+				Utilisateur listUser[] = Modele.recupererUsersEmprunt(request.getParameter("auteur"),request.getParameter("titre"),bibli);
+				request.setAttribute("ListUser", listUser);
+				System.out.println("Restituer"+listUser);
+				request.setAttribute("auteur", request.getParameter("auteur"));
+				request.setAttribute("titre", request.getParameter("titre"));
+				page ="Restitution.jsp";
+			}
+		} else if(request.getParameter("ValiderRestitution") != null){
+			String messageResult = "ERROR: Cet exemplaire n'a pas pu être restitué";
+			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0 && request.getParameter("identifiant")!=null) {
+				if(Modele.restituerLivre(request.getParameter("auteur"), request.getParameter("titre"), request.getParameter("identifiant"), bibli)!=null){
+					bibli = Modele.restituerLivre(request.getParameter("auteur"), request.getParameter("titre"), request.getParameter("identifiant"), bibli);
+					messageResult = "INFO: Un exemplaire de "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" emprunté par "+request.getParameter("Identifiant") +"a bien été restitué";
+				}
+			}
+			request.setAttribute("MessageResult", messageResult);
+			page ="Bibliothecaire.jsp";
 		} else if (request.getParameter("Reserver") != null){
 			String messageResa = "ERROR: Cette réservation n'a pas pu être réalisée";
 			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {
@@ -170,9 +167,6 @@ public class Controleur extends HttpServlet {
 			Livre listResa[] = Modele.recupererLivreReserves(LoginValue, bibli);
 			request.setAttribute("ListResa", listResa);
 			page = "Adherent.jsp";
-		    RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/"+page);
-		   rd.forward(request, response);	
 			
 		} else if (request.getParameter("DeReserver") != null){
 			String messageResa = "ERROR: Cette réservation n'a pas pu être annulée";
@@ -184,14 +178,17 @@ public class Controleur extends HttpServlet {
 			Livre listResa[] = Modele.recupererLivreReserves(LoginValue, bibli);
 			request.setAttribute("ListResa", listResa);
 			page = "Adherent.jsp";
-		    RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/"+page);
-		    rd.forward(request, response);	
 		}
 		// Log in failed
 		else {
-			response.sendRedirect("Accueil.jsp");
+			page="Accueil.jsp";
 		}
+		
+		RequestDispatcher rd = getServletContext()
+                .getRequestDispatcher("/"+page);
+	   rd.forward(request, response);	
+		
+		
 	}
 
 	/**

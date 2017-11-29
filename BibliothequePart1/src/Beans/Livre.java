@@ -4,7 +4,7 @@ public class Livre {
 	protected int idLivre;
 	protected String titre;
 	protected String auteur; 
-	protected int nblivresDispo;
+	protected int nbLivresDispo;
 	protected int nbLivresReserves;
 	protected int nbLivresEmpruntes;
 
@@ -14,7 +14,7 @@ public class Livre {
 		this.titre = titre;
 		this.auteur = auteur;
 		this.idLivre = idLivre;
-		this.nblivresDispo = nblivresDispo;
+		this.nbLivresDispo = nblivresDispo;
 		this.nbLivresReserves = nbLivresReserves;
 		this.nbLivresEmpruntes = nbLivresEmpruntes;
 		
@@ -44,13 +44,13 @@ public class Livre {
 	}
 
 
-	public int getNblivresDispo() {
-		return nblivresDispo;
+	public int getNbLivresDispo() {
+		return nbLivresDispo;
 	}
 
 
-	public void setNblivresDispo(int nblivresDispo) {
-		this.nblivresDispo = nblivresDispo;
+	public void setNbLivresDispo(int nblivresDispo) {
+		this.nbLivresDispo = nblivresDispo;
 	}
 
 

@@ -39,7 +39,7 @@
 		Livre listR[] = new Livre[livresRecherches.length];
 		for(int i = 0; i<	livresRecherches.length; i++){
 		Livre livre = livresRecherches[i];
-		int total = livre.getNblivresDispo() + livre.getNbLivresReserves() + livre.getNbLivresEmpruntes(); 
+		int total = livre.getNbLivresDispo() + livre.getNbLivresReserves() + livre.getNbLivresEmpruntes(); 
 		%>
 		<tr>
 			<td> <span class="auteur"><%=livre.getAuteur()%></span> </td>
@@ -58,13 +58,13 @@
 				<%-- Si la personne est bibliothecaire --%>
 				<% if(statut.equals("Bibliothecaire") ){ %>
         		<td> 
-        			<% 	if (livre.getNblivresDispo()>0){ %>
+        			<% 	if (livre.getNbLivresDispo()>0){ %>
         			<button type="submit" name="Supprimer" value="Supprimer" class="btn btn-danger">Supprimer*</button>
         			<button type="submit" name="SupprimerTout" value="ttsupp" class="btn btn-danger"> Tout Supprimer*</button>
 					<button type="submit" name="Emprunter" value="Emprunter" class="btn btn-success">Emprunter</button>
 					<% } 
         				if (livre.getNbLivresEmpruntes()>0){ %> 
-					<button type="submit" name="action" value="emprunt" class="btn btn-warning">Restituer</button>
+					<button type="submit" name="Restituer" value="Restituer" class="btn btn-warning">Restituer</button>
 					<% } %>
         	    </td>  		
        			<%} %>
@@ -73,7 +73,7 @@
 				<%-- Si la personne est adherente--%>
 				<% if(statut.equals("Adherent") ){ %>
         		<td> 
-        			<% if (livre.getNblivresDispo()>0){ %>
+        			<% if (livre.getNbLivresDispo()>0){ %>
         			<button type="submit" name="Reserver" class="btn btn-success" value="Reserver">Réserver</button>
 					<% } if (livre.getNbLivresEmpruntes()>0){ %> 
 					<button type="submit" name="DeReserver" class="btn btn-warning" value="DeReserver">Dé-réserver</button>

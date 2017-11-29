@@ -166,7 +166,7 @@ public class Modele {
 		
 		if(idAdherent!=-1 && login !=null){
 			for (int j = 0; j < bibli.listOccupations.size(); j++) {
-				if (bibli.listOccupations.get(j).idAdherent==idAdherent) {
+				if (bibli.listOccupations.get(j).idAdherent==idAdherent && bibli.getListOccupations().get(j).getStatutLivre().equals(Statut.RESERVE)) {
 						indexResa= j;
 						listResultOccup.add(bibli.listOccupations.get(j));
 				}
@@ -192,49 +192,99 @@ public class Modele {
 		return listR;
 	}
 	
+	// Methode qui permet de récupérer la liste utilisateur ayant emprunte un livre 
+	public static Utilisateur[] recupererUsersEmprunt(String auteur,String titre, Bibliotheque bibli){
+		ArrayList<Occupation> listResultOccup = new ArrayList<>();
+		ArrayList<Utilisateur> listResultFinal = new ArrayList<>();
+		Utilisateur listR[] = null;
+		//On récupère l'id du livre;
+		int idLivre = recupererIdLivre(titre, auteur, bibli);
+		if(idLivre!=-1){
+			for (int j = 0; j < bibli.listOccupations.size(); j++) {
+				if (bibli.listOccupations.get(j).idLivre==idLivre) {
+					if(recupererUserParId(bibli.listOccupations.get(j).idAdherent, bibli)!=null){
+						listResultFinal.add(recupererUserParId(bibli.listOccupations.get(j).idAdherent, bibli));
+					}
+				}
+				
+			}
+		}
+		// On ajoute les résultats dans notre tableau si il y en a
+		if(listResultFinal.size()>0){
+			listR = new Utilisateur[listResultFinal.size()];
+			for (int k = 0; k<listResultFinal.size(); k++){
+				listR[k] = listResultFinal.get(k);		
+			}
+		} 
+		return listR;
+	}
+	
 	// Methode qui permet de reserver un livre 
 	public static Bibliotheque reserveLivre(String auteur, String titre, String login, Bibliotheque bibli) {
-
 		int idUser = recupererIdUser(login, bibli);
 		int idLivre = recupererIdLivre(titre, auteur, bibli);
+		int indexLivre = recupererIndexLivre(titre, auteur, bibli);
+		int nbLivreReserves = bibli.listLivres.get(indexLivre).getNbLivresReserves();
+		int nbLivresDispo = bibli.listLivres.get(indexLivre).getNbLivresDispo();
 		Occupation monOccup = new Occupation(idUser, idLivre, Statut.RESERVE);
-
-		Livre monLivre = bibli.listLivres.get(recupererIndexLivre(titre, auteur, bibli));
-
-		monLivre = reserver(monLivre);
+		bibli.listLivres.get(indexLivre).setNbLivresReserves(nbLivreReserves++);
+		bibli.listLivres.get(indexLivre).setNbLivresDispo(nbLivresDispo--);
 		bibli.listOccupations.add(monOccup);
-
 		return bibli;
 	}
 
 	// Methode qui permet l'annulation d'un livre
 	public static Bibliotheque annulerReservationLivre(String auteur, String titre, String login, Bibliotheque bibli) {
-
 		int idUser = recupererIdUser(login, bibli);
 		int idLivre = recupererIdLivre(titre, auteur, bibli);
-
-		Livre monLivre = bibli.listLivres.get(recupererIndexLivre(titre, auteur, bibli));
-
-		monLivre = annulerReservation(monLivre);
-		bibli.listOccupations.remove(trouverOccupation(idUser, idLivre, bibli));
-
+		int indexLivre = recupererIndexLivre(titre, auteur, bibli);
+		int nbLivreReserves = bibli.listLivres.get(indexLivre).getNbLivresReserves();
+		int nbLivresDispo = bibli.listLivres.get(indexLivre).getNbLivresDispo();
+		bibli.listLivres.get(indexLivre).setNbLivresReserves(nbLivreReserves--);
+		bibli.listLivres.get(indexLivre).setNbLivresDispo(nbLivresDispo++);
+		bibli.listOccupations.remove(trouverOccupation(idUser, idLivre, bibli,Statut.RESERVE));
 		return bibli;
 	}
-
+	
 	//Methode qui permet d'emprunter un livre 
 	public static Bibliotheque emprunterLivre(String auteur, String titre, String login, Bibliotheque bibli){
-		
 		Bibliotheque maBibli =null;
 		int idUser = recupererIdUser(login, bibli);
 		int idLivre = recupererIdLivre(titre,auteur,bibli);
-		Occupation monOccup = trouverOccupation(idUser,idLivre,bibli);
+		int indexLivre = recupererIndexLivre(titre, auteur, bibli);
+		int nbLivreReserves = bibli.listLivres.get(indexLivre).getNbLivresReserves();
+		int nbLivresDispo = bibli.listLivres.get(indexLivre).getNbLivresDispo();
+		int nbLivresEmpruntes = bibli.listLivres.get(indexLivre).getNbLivresDispo();
+		Occupation monOccup = trouverOccupation(idUser,idLivre,bibli,Statut.RESERVE);
 		if(idUser!=-1 && idLivre!=-1){
 			maBibli =bibli;
-			if(monOccup!=null && monOccup.getStatutLivre().equals(Statut.RESERVE)){
-				maBibli.listOccupations.remove(monOccup);			
-			}
+			if(monOccup!=null){
+				maBibli.listOccupations.remove(monOccup);	
+				bibli.listLivres.get(indexLivre).setNbLivresReserves(nbLivreReserves--);
+			} else {
+				bibli.listLivres.get(indexLivre).setNbLivresDispo(nbLivresDispo--);
+			}			
 			monOccup = new Occupation(idUser,idLivre,Statut.EMPRUNTE);		
 			maBibli.listOccupations.add(monOccup);
+			bibli.listLivres.get(indexLivre).setNbLivresEmpruntes(nbLivresEmpruntes++);
+		}
+		return maBibli ;
+	}
+	
+	//Methode qui permet d'emprunter un livre 
+	public static Bibliotheque restituerLivre(String auteur, String titre, String login, Bibliotheque bibli){		
+		Bibliotheque maBibli =null;
+		int idUser = recupererIdUser(login, bibli);
+		int idLivre = recupererIdLivre(titre,auteur,bibli);
+		int indexLivre = recupererIndexLivre(titre, auteur, bibli);
+		int nbLivresDispo = bibli.listLivres.get(indexLivre).getNbLivresDispo();
+		int nbLivresEmpruntes = bibli.listLivres.get(indexLivre).getNbLivresDispo();
+		Occupation monOccup = trouverOccupation(idUser,idLivre,bibli,Statut.EMPRUNTE);
+		if(idUser!=-1 && idLivre!=-1 && monOccup!=null){
+			maBibli =bibli;
+			maBibli.listOccupations.remove(monOccup);			
+			bibli.listLivres.get(indexLivre).setNbLivresEmpruntes(nbLivresEmpruntes--);
+			bibli.listLivres.get(indexLivre).setNbLivresDispo(nbLivresDispo++);
 		}
 		return maBibli ;
 	}
@@ -294,6 +344,17 @@ public class Modele {
 		return monLivre;
 	}
 	
+	public static Utilisateur recupererUserParId(int idUser, Bibliotheque bibli){
+		Utilisateur User = null;
+		
+		for (int i = 0; i < bibli.listUsers.size(); i++) {
+			if (bibli.listUsers.get(i).getIdUtilisateur() == idUser) {
+				User = bibli.listUsers.get(i);
+			}
+		}
+		return User;
+	}
+	
 	public static int recupererIndexUser(String login, Bibliotheque bibli) {
 		int indexUser = -1;
 		for (int i = 0; i < bibli.listUsers.size(); i++) {
@@ -304,13 +365,13 @@ public class Modele {
 		return indexUser;
 	}
 
-	public static Occupation trouverOccupation(int idAdherent, int idLivre, Bibliotheque bibli) {
+	public static Occupation trouverOccupation(int idAdherent, int idLivre, Bibliotheque bibli, Statut monStatut) {
 
 		Occupation occupationARetourner = null;
 		ArrayList<Occupation> listOccup = new ArrayList();
 
 		for (int i = 0; i < bibli.listOccupations.size(); i++) {
-			if (bibli.listOccupations.get(i).idLivre == idLivre) {
+			if (bibli.listOccupations.get(i).idLivre == idLivre && bibli.listOccupations.get(i).getStatutLivre().equals(monStatut)) {
 				listOccup.add(bibli.listOccupations.get(i));
 			}
 		}
@@ -328,6 +389,7 @@ public class Modele {
 	public static Bibliotheque ajouterLivre(String auteur, String titre, Bibliotheque bibli) {
 		int indexLivre = -1;
 		int j;
+		
 		//On verifie que le livre n'existe pas 
 		for (j = 0; j < bibli.listLivres.size(); j++) {
 			if (bibli.listLivres.get(j).auteur.equals(auteur)&&bibli.listLivres.get(j).titre.equals(titre)) {
@@ -336,7 +398,8 @@ public class Modele {
 		}
 		
 		if (indexLivre != -1) {
-			bibli.listLivres.get(indexLivre).nblivresDispo++;
+			int nbLivresDispo = bibli.listLivres.get(indexLivre).getNbLivresDispo();
+			bibli.listLivres.get(indexLivre).setNbLivresDispo(nbLivresDispo++);
 		} else {
 			int idLivre = bibli.listLivres.size();
 			Livre monLivre = new Livre(idLivre,titre,auteur,1,0,0);
@@ -351,10 +414,11 @@ public class Modele {
 	public static Bibliotheque supprimerLivre (String auteur, String titre, Bibliotheque bibli){
 		if(auteur != null && titre !=null){
 			int indexLivre = recupererIndexLivre(titre,auteur,bibli);
-			bibli.listLivres.get(indexLivre).nblivresDispo --;
-			if(bibli.listLivres.get(indexLivre).nblivresDispo==0 && 
-					bibli.listLivres.get(indexLivre).nbLivresEmpruntes==0 && 
-					bibli.listLivres.get(indexLivre).nbLivresReserves==0) {				
+			int nbLivresDispo = bibli.listLivres.get(indexLivre).getNbLivresDispo();
+			bibli.listLivres.get(indexLivre).setNbLivresDispo(nbLivresDispo--);
+			if(bibli.listLivres.get(indexLivre).getNbLivresDispo()==0 && 
+					bibli.listLivres.get(indexLivre).getNbLivresEmpruntes()==0 && 
+					bibli.listLivres.get(indexLivre).getNbLivresReserves()==0) {				
 				bibli.listLivres.remove(indexLivre);
 			}
 		}
@@ -366,35 +430,14 @@ public class Modele {
 	public static Bibliotheque supprimerTout (String auteur, String titre, Bibliotheque bibli){
 		if(auteur != null && titre !=null){
 			int indexLivre = recupererIndexLivre(titre,auteur,bibli);
-			bibli.listLivres.get(indexLivre).nblivresDispo = 0;
-			if(bibli.listLivres.get(indexLivre).nblivresDispo==0 && 
+			bibli.listLivres.get(indexLivre).setNbLivresDispo(0);
+			if(bibli.listLivres.get(indexLivre).getNbLivresDispo()==0 && 
 					bibli.listLivres.get(indexLivre).nbLivresEmpruntes==0 && 
 					bibli.listLivres.get(indexLivre).nbLivresReserves==0) {				
 				bibli.listLivres.remove(indexLivre);
 			}
 		}
 		return bibli;
-	}
-	
-
-	public static Livre reserver(Livre monLivre){
-		if(monLivre.nblivresDispo==0){
-			System.out.println("Il n'y a pas d'exemplaire de libre.");
-		}else{
-			//Modifier statut dans Occupation
-			monLivre.nbLivresReserves++;
-			monLivre.nblivresDispo--;
-		}
-		
-		return monLivre;
-	}
-	
-	public static Livre annulerReservation(Livre monLivre){
-		//Modifier statut dans Occupation
-		monLivre.nbLivresReserves--;
-		monLivre.nblivresDispo++;
-		System.out.println("L'annulation est un succès.");
-		return monLivre;
 	}
 	
 	
