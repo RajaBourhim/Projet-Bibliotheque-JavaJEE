@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <% 	String logged = (String)session.getAttribute("Logged");
-	String messageResult = (String)request.getAttribute("MessageResult");
+	String message = (String)request.getAttribute("message");
 	String statut = "Bibliothecaire";
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,15 +13,15 @@
 </head>
 <body>
 
+
 <%-- Partie header --%>
  <jsp:include page="Header.jsp">
         <jsp:param name="Statut" value="<%=statut%>"/>
         <jsp:param name="Logged" value="<%= logged %>"/>
   </jsp:include>
 
-	<% if(messageResult!=null){%> <p> MESSAGE <%=messageResult%><%} %></p>
-
-
+ <% if(message!=null){%> <p> MESSAGE <%=message%><%} %></p>
+ 
 <h2>Gestion des livres</h2>
 <%-- Partie ajouter --%>
 <%-- Partie rechercher --%>

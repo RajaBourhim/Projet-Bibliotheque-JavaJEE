@@ -1,6 +1,9 @@
 <%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, Beans.Livre " %>
 <link href="file.css" rel="stylesheet" type="text/css"  media="screen">
-<% String statut = request.getParameter("statut");%>
+<% String statut = request.getParameter("statut");
+String message = (String)request.getAttribute("message");
+
+%>
 
 <%-- Partie Connexion --%>
 <h3>Connexion au portail</h3>
@@ -15,3 +18,4 @@
   		</div>
 		<input class="btn btn-default" type='submit' value='Connecter'/> 
 	</form>
+	 <% if(message!=null){%> <p> MESSAGE <%=message%><%} %></p>

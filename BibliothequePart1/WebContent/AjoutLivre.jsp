@@ -1,7 +1,6 @@
 <%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable,Beans.Livre " %>
 <link href="file.css" rel="stylesheet" type="text/css"  media="screen">
 <% 	String logged = (String)session.getAttribute("Logged");
-	String messageAjout = (String)request.getAttribute("MessageAjout");
 %>
 
 	<%-- Partie ajouter --%>
@@ -16,6 +15,5 @@
     	<input type='text' name='titre' class="form-control"/> 
   		</div>
 		<input type='submit' class="btn btn-default" value='Ajouter'/> 
-		<input type='hidden' name='AddBook' value='true'/> 
+		<input type='hidden' name='FORM' value='ajoutLivre'/> 
 	</form>
-	 <% if(messageAjout!=null){%> <p> MESSAGE <%=messageAjout%><%} %></p>

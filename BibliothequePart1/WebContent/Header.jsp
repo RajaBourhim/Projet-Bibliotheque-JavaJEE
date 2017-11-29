@@ -3,12 +3,21 @@
 <% 	String logged = (String)session.getAttribute("Logged");
 	String statut = (String)request.getParameter("Statut");
 %>
+
+<% if(logged==null){
+	String message = "Connexion interrompue";
+	request.setAttribute("message", message);
+	RequestDispatcher rd = getServletContext()
+            .getRequestDispatcher("/Accueil.jsp");
+   rd.forward(request, response);	
+	} %>
+}
 	<table>
 	<tr> 
 		<td><h3> Accès <%=statut%></h3></td>
 		<td><form class="form-inline" action='Controleur' method='POST'>
 				<input class="btn btn-danger" type='submit' value='Déconnexion'/> 
-				<input type='hidden' name='Deconnection' value='true'/> 
+				<input type='hidden' name='FORM' value='deconnexion'/> 
 			</form>
 		</td>
 	</tr>

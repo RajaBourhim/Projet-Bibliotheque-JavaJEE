@@ -3,15 +3,10 @@
 <% 	Livre livresReservation[] = (Livre[]) request.getAttribute("ListResa"); 
 	String statut = request.getParameter("statut");
 	String logged = (String)session.getAttribute("Logged");
-	String messageResa = (String)request.getAttribute("MessageResa");
-
-%>
-		
-	<% if(messageResa!=null){%> <p> MESSAGE <%=messageResa%><%} %></p>
-	
+%>	
 	<form class="form-inline" action='Controleur' method='POST'>
 		<input class="btn btn-info" type='submit' value='Afficher mes réservations'/> 
-		<input type='hidden' name='LivreResa' value='true'/> 
+		<input type='hidden' name='FORM' value='affichageResa'/> 
 	</form>
 	
 <%-- Partie liste Reservation --%>
@@ -40,7 +35,7 @@
 				<input type="hidden" name="auteur" value="<%=livre.getAuteur()%>"/>
 				<% } %> 							
         		<td> 
-        			<button type="submit" name="DeReserver" class="btn btn-warning" value="DeReserver">Dé-réserver</button>
+        			<button type="submit" name="FORM" class="btn btn-warning" value="deReserver">Dé-réserver</button>
         	    </td>  		
 			</form>
 			<% } %>

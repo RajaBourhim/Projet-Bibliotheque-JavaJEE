@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <% 	String logged = (String)session.getAttribute("Logged");
     String statut = "Adherent";
+    String message = (String)request.getAttribute("message");
 %>
 <html>
 <head>
@@ -18,10 +19,7 @@
         <jsp:param name="Logged" value="<%= logged %>"/>
   </jsp:include>
 
-
-
-<%-- Partie réservation d'un livre --%>
-<%-- afficher la liste des livres --%>
+ <% if(message!=null){%> <p> MESSAGE <%=message%><%} %></p>
 
 <%-- Partie rechercher --%>
  <jsp:include page="Recherche.jsp">

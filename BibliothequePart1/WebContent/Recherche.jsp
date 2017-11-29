@@ -1,10 +1,8 @@
 <%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, Beans.Livre " %>
 <% 	Livre livresRecherches[] = (Livre[]) request.getAttribute("listData"); 
 	String statut = request.getParameter("statut");
-	String messageResearch = (String)request.getAttribute("MessageResearch");
-	%>
-
-<% if(messageResearch!=null){%> <p> MESSAGE <%=messageResearch%><%} %></p>
+	Livre livresReservation[] = (Livre[]) request.getAttribute("ListResa"); 
+%>
 <%-- Partie Consultation --%>
 <h3>Rechercher un livre</h3>
 	<form class="form-inline" action='Controleur' method='POST'>
@@ -17,7 +15,7 @@
     	<input type='text' name='titre' class="form-control"/> 
   		</div>
 		<input class="btn btn-default" type='submit' value='Rechercher'/> 
-		<input type='hidden' name='EnterResearch' value='true'/> 
+		<input type='hidden' name='FORM' value='consultation'/> 
 		<input type='hidden' name='Statut' value=<%=statut %>/> 
 	</form>
 
@@ -59,24 +57,38 @@
 				<% if(statut.equals("Bibliothecaire") ){ %>
         		<td> 
         			<% 	if (livre.getNbLivresDispo()>0){ %>
-        			<button type="submit" name="Supprimer" value="Supprimer" class="btn btn-danger">Supprimer*</button>
-        			<button type="submit" name="SupprimerTout" value="ttsupp" class="btn btn-danger"> Tout Supprimer*</button>
-					<button type="submit" name="Emprunter" value="Emprunter" class="btn btn-success">Emprunter</button>
+        			<button type="submit" name="FORM" value="supprimer" class="btn btn-danger">Supprimer*</button>
+        			<button type="submit" name="FORM" value="supprimerTout" class="btn btn-danger"> Tout Supprimer*</button>
+					<button type="submit" name="FORM" value="emprunter" class="btn btn-success">Emprunter</button>
 					<% } 
-        				if (livre.getNbLivresEmpruntes()>0){ %> 
-					<button type="submit" name="Restituer" value="Restituer" class="btn btn-warning">Restituer</button>
+        				if (livre.getNbLivresEmpruntes()>0){ %>
+        
+        				 
+					<button type="submit" name="FORM" value="restituer" class="btn btn-warning">Restituer</button>
 					<% } %>
         	    </td>  		
        			<%} %>
        			
        							
 				<%-- Si la personne est adherente--%>
-				<% if(statut.equals("Adherent") ){ %>
+				<% if(statut.equals("Adherent") ){ 
+					boolean index = false;
+					if(livresReservation!=null){
+						for(int k = 0; k<	livresReservation.length; k++){
+							Livre monlivre = livresReservation[k];
+							if(monlivre.getAuteur().equals(livre.getAuteur()) && monlivre.getTitre().equals(livre.getTitre())){
+								index = true;
+							}
+						}
+					}
+						%>	
         		<td> 
         			<% if (livre.getNbLivresDispo()>0){ %>
-        			<button type="submit" name="Reserver" class="btn btn-success" value="Reserver">Réserver</button>
-					<% } if (livre.getNbLivresEmpruntes()>0){ %> 
-					<button type="submit" name="DeReserver" class="btn btn-warning" value="DeReserver">Dé-réserver</button>
+        			<button type="submit" name="FORM" class="btn btn-success" value="reserver">Réserver</button>
+					<% } 
+        			if (livre.getNbLivresEmpruntes()>0 && index){ %> 
+					
+					<button type="submit" name="FORM" class="btn btn-warning" value="deReserver">Dé-réserver</button>
 					<% } %>
         	    </td>  		
        			<%} %>

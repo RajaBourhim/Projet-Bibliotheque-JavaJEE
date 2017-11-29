@@ -17,7 +17,7 @@
 <body>
 
 <h2> Restitution d'un livre </h2>
-<form>
+<form action='Controleur' method='POST'>
   <div class="form-group row">
     <label for="inputAuteur" class="col-sm-2 col-form-label">Auteur</label>
     <div class="col-sm-10">
@@ -50,7 +50,7 @@
 				<input type="hidden" name="auteur" value="<%=auteur%>"/>
 				<input type="hidden" name="identifiant" value="<%=user.getIdentifiant()%>"/>
 				<input type='hidden' name='ValiderRestitution' value='true'/> 
-				<button type="submit" name="action" value="ValidRestituer" class="btn btn-warning">Restituer</button>
+				<button type="submit" name="FORM" value="validerRestitution" class="btn btn-warning">Restituer</button>
         	</td>  		
        			   			
 			<%} %>

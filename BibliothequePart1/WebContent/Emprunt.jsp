@@ -14,7 +14,7 @@
 <body>
 
 <h2> Emprunt d'un livre </h2>
-<form>
+<form action='Controleur' method='POST'>
   <div class="form-group row">
     <label for="inputAuteur" class="col-sm-2 col-form-label">Auteur</label>
     <div class="col-sm-10">
@@ -36,7 +36,7 @@
 
   <div class="form-group row">
     <div class="col-sm-10">
-    	<input type='hidden' name='ValiderEmprunt' value='true'/> 
+    	<input type='hidden' name='FORM' value='validerEmprunt'/> 
 		<input type='hidden' name='auteur' value="<%=auteur%>"/> 
 		<input type='hidden' name='titre' value="<%=titre%>"/> 
       	<button type="submit" class="btn btn-primary" value="ValiderEmprunt" >Valider Emprunt</button>
