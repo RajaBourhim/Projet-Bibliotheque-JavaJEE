@@ -49,6 +49,10 @@ public class Controleur extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		String page = "Accueil.jsp";
+		
+		RequestDispatcher rd = getServletContext()
+                .getRequestDispatcher("/"+page);
+	   rd.forward(request, response);	
 
 		
 	}
@@ -124,7 +128,7 @@ public class Controleur extends HttpServlet {
 			//Affichage des reservations
 			message="Vous avez fait aucune reservation";
 			Livre listResa[] = Modele.recupererLivreReserves(LoginValue, bibli);
-			if(listResa.length>0){ 
+			if(listResa!=null){ 
 				request.setAttribute("ListResa", listResa); 
 				message="Voici vos reservations";
 			}
@@ -137,7 +141,7 @@ public class Controleur extends HttpServlet {
 				message = "INFO: Suppression d'un exemplaire du livre "+request.getParameter("titre")+" de "+request.getParameter("auteur")+" terminé";		
 			}
 			page = "Bibliothecaire.jsp";
-		}else if (formulaire.equals("supprimer")) {
+		}else if (formulaire.equals("supprimerTout")) {
 			// Suppression de tous les livre disponibles
 			message = "ERROR: Ce livre n'a pas pu être supprimé";
 			if (request.getParameter("auteur").length()>0 && request.getParameter("titre").length()>0) {
