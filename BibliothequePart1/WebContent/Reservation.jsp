@@ -1,4 +1,4 @@
-<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, Beans.Livre " %>
+<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, beans.Livre " %>
 <link href="file.css" rel="stylesheet" type="text/css"  media="screen">
 <% 	Livre livresReservation[] = (Livre[]) request.getAttribute("ListResa"); 
 	String statut = request.getParameter("statut");
@@ -27,6 +27,7 @@
 		<tr>
 			<td> <span class="auteur"><%=livre.getAuteur()%></span> </td>
 			<td> <span class="titre"><%=livre.getTitre()%></span> </td>
+			<td> 
 			<form action="Controleur" method="POST">
 				<%-- input type="hidden" name="livre" value="<%=livre.getIdLivre()%>"/> --%>
 				<% if (livre.getTitre()!= null){ %>
@@ -34,11 +35,11 @@
 				<% } if (livre.getAuteur() != null){ %> 
 				<input type="hidden" name="auteur" value="<%=livre.getAuteur()%>"/>
 				<% } %> 							
-        		<td> 
-        			<button type="submit" name="FORM" class="btn btn-warning" value="deReserver">Dé-réserver</button>
-        	    </td>  		
+        		
+        			<button type="submit" name="FORM" class="btn btn-warning" value="deReserver">Dé-réserver</button>	
 			</form>
 			<% } %>
+			    </td>  	
 					</tr>
 	</table>
 		<% } %>

@@ -1,4 +1,5 @@
-package Beans;
+package beans;
+
 public class Livre {
 	
 	protected int idLivre;

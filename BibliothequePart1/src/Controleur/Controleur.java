@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.text.html.HTMLDocument.Iterator;
 
-import Beans.Bibliotheque;
-import Beans.Livre;
-import Beans.Modele;
-import Beans.Utilisateur;
+import beans.Bibliotheque;
+import beans.Livre;
+import Modele.Modele;
+import beans.Utilisateur;
 
 /**
  * Servlet implementation class ProcessConnexion

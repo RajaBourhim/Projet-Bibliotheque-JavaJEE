@@ -1,4 +1,4 @@
-<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable,Beans.Livre " %>
+<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable,beans.Livre " %>
 <link href="file.css" rel="stylesheet" type="text/css"  media="screen">
 <% 	String logged = (String)session.getAttribute("Logged");
 %>

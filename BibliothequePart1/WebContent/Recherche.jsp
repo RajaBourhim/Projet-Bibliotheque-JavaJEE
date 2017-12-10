@@ -1,4 +1,4 @@
-<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, Beans.Livre " %>
+<%@page import = "java.io.*,java.util.*,java.util.ArrayList,java.util.Enumeration,java.util.Hashtable, beans.Livre " %>
 <% 	Livre livresRecherches[] = (Livre[]) request.getAttribute("listData"); 
 	String statut = request.getParameter("statut");
 	Livre livresReservation[] = (Livre[]) request.getAttribute("ListResa"); 
@@ -44,8 +44,8 @@
 			<td> <span class="titre"><%=livre.getTitre()%></span> </td>
 			<td> <span class="titre"><%=livre.getNbLivresEmpruntes()%></span> </td>
 			<td> <span class="titre"><%=total%></span> </td>
-			
-			<form action="Controleur" method="POST">
+			<td> 
+				<form action="Controleur" method="POST">
 				<%-- input type="hidden" name="livre" value="<%=livre.getIdLivre()%>"/> --%>
 				<% if (livre.getTitre() != null){ %>
 				<input type="hidden" name="titre" value="<%=livre.getTitre()%>"/>
@@ -55,7 +55,7 @@
 				
 				<%-- Si la personne est bibliothecaire --%>
 				<% if(statut.equals("Bibliothecaire") ){ %>
-        		<td> 
+        	
         			<% 	if (livre.getNbLivresDispo()>0){ %>
         			<button type="submit" name="FORM" value="supprimer" class="btn btn-danger">Supprimer*</button>
         			<button type="submit" name="FORM" value="supprimerTout" class="btn btn-danger"> Tout Supprimer*</button>
@@ -66,10 +66,11 @@
         				 
 					<button type="submit" name="FORM" value="restituer" class="btn btn-warning">Restituer</button>
 					<% } %>
-        	    </td>  		
+        	  </form>   		
        			<%} %>
-       			
-       							
+       		</td> 	
+       		<td>		
+       		<form action="Controleur" method="POST">		
 				<%-- Si la personne est adherente--%>
 				<% if(statut.equals("Adherent") ){ 
 					boolean index = false;
@@ -82,7 +83,7 @@
 						}
 					}
 						%>	
-        		<td> 
+        		 
         			<% if (livre.getNbLivresDispo()>0){ %>
         			<button type="submit" name="FORM" class="btn btn-success" value="reserver">Réserver</button>
 					<% } 
@@ -90,13 +91,11 @@
 					
 					<button type="submit" name="FORM" class="btn btn-warning" value="deReserver">Dé-réserver</button>
 					<% } %>
-        	    </td>  		
+        	    		
        			<%} %>
-       			
-       			
-
 			</form>
 			<% } %>
+			</td>  
 					</tr>
 	</table>
 		 <p> *Seuls les livres disponible peuvent être supprimés </p>

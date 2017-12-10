@@ -28,9 +28,9 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputAdherent" class="col-sm-2 col-form-label">Adhérent</label>
+    <label for="inputAdherent" class="col-sm-2 col-form-label">Identifinant de l'Adhérent</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputAdherent" name="Identifiant" placeholder="Identifiant de l'adhérent">
+      <input type="text" class="form-control" id="inputAdherent" name="Identifiant">
     </div>
   </div>
 

@@ -1,4 +1,4 @@
-package Beans;
+package beans;
 import java.util.ArrayList;
 
 public class Bibliotheque {
