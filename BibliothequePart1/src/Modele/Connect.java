@@ -10,9 +10,9 @@ public class Connect {
       Class.forName("org.postgresql.Driver");
       System.out.println("Driver O.K.");
 
-      String url = "jdbc:postgresql://localhost:5432/Ecole";
+      String url = "jdbc:postgresql://localhost:5432/ece";
       String user = "postgres";
-      String passwd = "postgres";
+      String passwd = "database";
 
       Connection conn = DriverManager.getConnection(url, user, passwd);
       System.out.println("Connexion effective !");         

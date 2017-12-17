@@ -1,19 +1,87 @@
 package Modele;
 import beans.*;
+
 import java.awt.List;
 import java.util.ArrayList;
 
-public class Modele {
+import javax.ejb.EJB;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 
+public class Modele {
+	
+	//java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur
+	
+
+	
 	public static Bibliotheque creerBibliotheque() {
 		Bibliotheque bibli = null;
+		
+		InitialContext ctx = null;
+		try {
+			ctx = new InitialContext();
+		} catch (NamingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		Utilisateur user1=null;
+		Utilisateur user2=null;
+		Utilisateur user3=null;
+		Utilisateur user4=null;
+		
+		Livre livre1 = null;
+		Livre livre2 = null;
+		Livre livre3 = null;
+		Livre livre4 = null;
+		Livre livre5 = null;
+		Livre livre6 = null;
+		
+		
+		try {
+			
+			user1 = (Utilisateur)ctx.lookup("java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur");			 
+			user2 = (Utilisateur)ctx.lookup("java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur");
+			user3 = (Utilisateur)ctx.lookup("java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur");
+			user4 = (Utilisateur)ctx.lookup("java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur");
+			
+			user1.newUtilisateurBean(1, "Raja", "toto", false);
+			user2.newUtilisateurBean(2, "Marion", "test", false);
+			user3.newUtilisateurBean(3, "Logan", "Planche", false);
+			user4.newUtilisateurBean(4, "adm", "adm", true);
+			
+			livre1 = (Livre)ctx.lookup("java:global/BibliothequePart1/LivreBean!beans.Livre");
+			livre2 = (Livre)ctx.lookup("java:global/BibliothequePart1/LivreBean!beans.Livre");
+			livre3 = (Livre)ctx.lookup("java:global/BibliothequePart1/LivreBean!beans.Livre");
+			livre4 = (Livre)ctx.lookup("java:global/BibliothequePart1/LivreBean!beans.Livre");
+			livre5 = (Livre)ctx.lookup("java:global/BibliothequePart1/LivreBean!beans.Livre");
+			livre6 = (Livre)ctx.lookup("java:global/BibliothequePart1/LivreBean!beans.Livre");
+			
+			livre1.newLivre(1, "L'art de la guerre", "Sun Tzu", 1, 0, 3);
+			livre2.newLivre(2, "Autre monde", "Maxime CHATTAM", 5, 0, 3);
+			livre3.newLivre(3, "Le livre de la jungle", "Mowgli", 16, 0, 0);
+			livre4.newLivre(4, "Le livre de la jungle 2", "Mowgli", 10, 2, 0);
+			livre5.newLivre(5, "Le livre de la jungle 3", "Mowgli", 0, 1, 2);
+			livre6.newLivre(6, "Logan", "Logan Planche", 0, 1, 2);
+					
+			
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		Livre livre1 = new Livre(1, "L'art de la guerre", "Sun Tzu", 1, 0, 3);
+
+		//Utilisateur user1 = new Utilisateur(1, "Raja", "toto", false);
+		//Utilisateur user2 = new Utilisateur(2, "Marion", "test", false);
+		//Utilisateur user3 = new Utilisateur(3, "Logan", "Planche", false);
+		//Utilisateur user4 = new Utilisateur(4, "adm", "adm", true);
+		
+		/*Livre livre1 = new Livre(1, "L'art de la guerre", "Sun Tzu", 1, 0, 3);
 		Livre livre2 = new Livre(2, "Autre monde", "Maxime CHATTAM", 5, 0, 3);
 		Livre livre3 = new Livre(3, "Le livre de la jungle", "Mowgli", 16, 0, 0);
 		Livre livre4 = new Livre(4, "Le livre de la jungle 2", "Mowgli", 10, 2, 0);
 		Livre livre5 = new Livre(5, "Le livre de la jungle 3", "Mowgli", 0, 1, 2);
-		Livre livre6 = new Livre(6, "Logan", "Logan Planche", 0, 1, 2);
+		Livre livre6 = new Livre(6, "Logan", "Logan Planche", 0, 1, 2);*/
 
 		Occupation occup1 = new Occupation(1, 1, Statut.EMPRUNTE);
 		Occupation occup2 = new Occupation(2, 1, Statut.EMPRUNTE);
@@ -29,12 +97,7 @@ public class Modele {
 		Occupation occup12 = new Occupation(1, 6, Statut.RESERVE);
 		Occupation occup13 = new Occupation(2, 6, Statut.EMPRUNTE);
 		Occupation occup14 = new Occupation(3, 6, Statut.EMPRUNTE);
-
-		Utilisateur user1 = new Utilisateur(1, "Raja", "toto", false);
-		Utilisateur user2 = new Utilisateur(2, "Marion", "test", false);
-		Utilisateur user3 = new Utilisateur(3, "Logan", "Planche", false);
-		Utilisateur user4 = new Utilisateur(4, "adm", "adm", true);
-
+		
 		ArrayList<Livre> listLivres = new ArrayList<>();
 		ArrayList<Utilisateur> listUsers = new ArrayList<>();
 		ArrayList<Occupation> listOccupations = new ArrayList<>();
@@ -66,7 +129,6 @@ public class Modele {
 		listOccupations.add(occup12);
 		listOccupations.add(occup13);
 		listOccupations.add(occup14);
-
 		bibli = new Bibliotheque(listLivres, listUsers, listOccupations);
 
 		return bibli;
@@ -75,13 +137,16 @@ public class Modele {
 	// Permet de verifier si les identifiant et password entrés sont correctes
 	public static boolean verifieConnexion(String loginConnect, String passConnect, Bibliotheque bibli) {
 
+	
 		boolean connect = false;
 		int indexUser = -1;
 		int j;
 		boolean Login = false;
 		boolean Pass = false;
 
+		System.out.println("size" +bibli.getListUsers().size());
 		for (j = 0; j < bibli.getListUsers().size(); j++) {
+			System.out.println("un user" +bibli.getListUsers().get(j).getIdentifiant());
 			if (bibli.getListUsers().get(j).getIdentifiant().equals(loginConnect)) {
 				indexUser = j;
 			}
@@ -100,6 +165,7 @@ public class Modele {
 			connect = true;
 		}
 
+		System.out.println("value" +connect);
 		return connect;
 	}
 
@@ -196,7 +262,7 @@ public class Modele {
 	public static Utilisateur[] recupererUsersEmprunt(String auteur,String titre, Bibliotheque bibli){
 		ArrayList<Occupation> listResultOccup = new ArrayList<>();
 		ArrayList<Utilisateur> listResultFinal = new ArrayList<>();
-		Utilisateur listR[] = null;
+		Utilisateur[] listR = null;
 		//On récupère l'id du livre;
 		int idLivre = recupererIdLivre(titre, auteur, bibli);
 		if(idLivre!=-1){
@@ -400,7 +466,8 @@ public class Modele {
 			bibli.getListLivres().get(indexLivre).setNbLivresDispo(nbLivresDispo ++);
 		} else {
 			int idLivre = bibli.getListLivres().size()+1;
-			Livre monLivre = new Livre(idLivre,titre,auteur,1,0,0);
+			Livre monLivre = null;
+			monLivre.newLivre(idLivre,titre,auteur,1,0,0);
 			bibli.getListLivres().add(monLivre);
 		}
 		return bibli;

@@ -1,0 +1,33 @@
+/* AUTOMATICALLY GENERATED ON Sun Dec 17 17:54:44 CET 2017*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "setNbLivresEmpruntes,Local,int";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "setTitre,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "setNbLivresDispo,Local,int";
+  permission javax.security.jacc.EJBMethodPermission "UtilisateurBean", "setType,Local,boolean";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "getNbLivresEmpruntes,Local,";
+  permission javax.security.jacc.EJBMethodPermission "UtilisateurBean", "setIdUtilisateur,Local,int";
+  permission javax.security.jacc.EJBMethodPermission "UtilisateurBean", "getIdUtilisateur,Local,";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "getNbLivresDispo,Local,";
+  permission javax.security.jacc.EJBMethodPermission "UtilisateurBean", "getPassword,Local,";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "getAuteur,Local,";
+  permission javax.security.jacc.EJBMethodPermission "UtilisateurBean", "getIdentifiant,Local,";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "setNbLivresReserves,Local,int";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "setIdLivre,Local,int";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "setAuteur,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "newLivre,Local,int,java.lang.String,java.lang.String,int,int,int";
+  permission javax.security.jacc.EJBMethodPermission "UtilisateurBean", "newUtilisateurBean,Local,int,java.lang.String,java.lang.String,boolean";
+  permission javax.security.jacc.EJBMethodPermission "UtilisateurBean", "isType,Local,";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "getNbLivresReserves,Local,";
+  permission javax.security.jacc.EJBMethodPermission "UtilisateurBean", "setPassword,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "UtilisateurBean", "setIdentifiant,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "getIdLivre,Local,";
+  permission javax.security.jacc.EJBMethodPermission "LivreBean", "getTitre,Local,";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "LivreBean", "**";
+  permission javax.security.jacc.EJBRoleRefPermission "UtilisateurBean", "**";
+};
+

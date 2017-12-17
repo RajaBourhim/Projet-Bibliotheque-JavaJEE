@@ -1,5 +1,9 @@
 package beans;
+
+
 import Modele.Statut;
+
+
 public class Occupation {
 	
 	protected int idAdherent;

@@ -9,7 +9,12 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Users/Raja/Documents/apache-tomcat-8.5.20/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Raja/Downloads/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Raja/Downloads/standard-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raja/Documents/GitHub/Projet-Bibliotheque-JavaJEE/glassfish4/glassfish/modules/javax.ejb-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raja/Documents/GitHub/Projet-Bibliotheque-JavaJEE/glassfish4/glassfish/modules/javax.servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raja/Documents/GitHub/Projet-Bibliotheque-JavaJEE/glassfish4/glassfish/lib/appserv-rt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raja/Documents/GitHub/Projet-Bibliotheque-JavaJEE/glassfish4/glassfish/lib/gf-client.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raja/Documents/GitHub/Projet-Bibliotheque-JavaJEE/glassfish4/glassfish/lib/javaee.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raja/Documents/GitHub/Projet-Bibliotheque-JavaJEE/glassfish4/glassfish/lib/jndi-properties.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
