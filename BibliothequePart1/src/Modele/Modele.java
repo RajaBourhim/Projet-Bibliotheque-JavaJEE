@@ -13,6 +13,27 @@ public class Modele {
 	//java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur
 	
 
+	public static Livre creerLivre(int idLivre, String titre, String auteur, int nblivresDispo, int nbLivresReserves, int nbLivresEmpruntes) {
+		Livre livre = null;
+		
+		InitialContext ctx = null;
+		try {
+			ctx = new InitialContext();
+		} catch (NamingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			livre = (Livre)ctx.lookup("java:global/BibliothequePart1/LivreBean!beans.Livre");
+			livre.newLivre(idLivre, titre, auteur, nblivresDispo, nbLivresReserves, nbLivresEmpruntes);
+			
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return livre;
+	}
 	
 	public static Bibliotheque creerBibliotheque() {
 		Bibliotheque bibli = null;
@@ -69,19 +90,6 @@ public class Modele {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
-		//Utilisateur user1 = new Utilisateur(1, "Raja", "toto", false);
-		//Utilisateur user2 = new Utilisateur(2, "Marion", "test", false);
-		//Utilisateur user3 = new Utilisateur(3, "Logan", "Planche", false);
-		//Utilisateur user4 = new Utilisateur(4, "adm", "adm", true);
-		
-		/*Livre livre1 = new Livre(1, "L'art de la guerre", "Sun Tzu", 1, 0, 3);
-		Livre livre2 = new Livre(2, "Autre monde", "Maxime CHATTAM", 5, 0, 3);
-		Livre livre3 = new Livre(3, "Le livre de la jungle", "Mowgli", 16, 0, 0);
-		Livre livre4 = new Livre(4, "Le livre de la jungle 2", "Mowgli", 10, 2, 0);
-		Livre livre5 = new Livre(5, "Le livre de la jungle 3", "Mowgli", 0, 1, 2);
-		Livre livre6 = new Livre(6, "Logan", "Logan Planche", 0, 1, 2);*/
 
 		Occupation occup1 = new Occupation(1, 1, Statut.EMPRUNTE);
 		Occupation occup2 = new Occupation(2, 1, Statut.EMPRUNTE);
@@ -466,9 +474,7 @@ public class Modele {
 			bibli.getListLivres().get(indexLivre).setNbLivresDispo(nbLivresDispo ++);
 		} else {
 			int idLivre = bibli.getListLivres().size()+1;
-			Livre monLivre = null;
-			monLivre.newLivre(idLivre,titre,auteur,1,0,0);
-			bibli.getListLivres().add(monLivre);
+			Livre monLivre = creerLivre(idLivre,titre,auteur,1,0,0);
 		}
 		return bibli;
 	}

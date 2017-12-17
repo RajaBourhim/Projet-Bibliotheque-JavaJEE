@@ -79,8 +79,6 @@ public class Controleur extends HttpServlet {
 		
 			// Retourne true si le login et password sont bons
 			logged = Modele.verifieConnexion(request.getParameter("login"),request.getParameter("password"),bibli);
-	    System.out.println(logged);
-	    message = "test "+logged;
 			if (logged) {
 				indexUser = Modele.recupererIndexUser(request.getParameter("login"), bibli);
 				session.setAttribute("Logged", request.getParameter("login"));

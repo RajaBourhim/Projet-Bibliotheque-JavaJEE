@@ -7092,3 +7092,100 @@ java.lang.NullPointerException
 [2017-12-17T17:57:34.505+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=29 _ThreadName=Thread-8] [timeMillis: 1513529854505] [levelValue: 800] [[
   true]]
 
+[2017-12-17T18:00:22.163+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=29 _ThreadName=Thread-8] [timeMillis: 1513530022163] [levelValue: 800] [[
+  size4]]
+
+[2017-12-17T18:00:22.164+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=29 _ThreadName=Thread-8] [timeMillis: 1513530022164] [levelValue: 800] [[
+  un userRaja]]
+
+[2017-12-17T18:00:22.164+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=29 _ThreadName=Thread-8] [timeMillis: 1513530022164] [levelValue: 800] [[
+  un userMarion]]
+
+[2017-12-17T18:00:22.165+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=29 _ThreadName=Thread-8] [timeMillis: 1513530022165] [levelValue: 800] [[
+  un userLogan]]
+
+[2017-12-17T18:00:22.165+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=29 _ThreadName=Thread-8] [timeMillis: 1513530022165] [levelValue: 800] [[
+  un useradm]]
+
+[2017-12-17T18:00:22.165+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=29 _ThreadName=Thread-8] [timeMillis: 1513530022165] [levelValue: 800] [[
+  valuetrue]]
+
+[2017-12-17T18:00:22.165+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=29 _ThreadName=Thread-8] [timeMillis: 1513530022165] [levelValue: 800] [[
+  true]]
+
+[2017-12-17T18:01:00.590+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=27 _ThreadName=Thread-8] [timeMillis: 1513530060590] [levelValue: 800] [[
+  size4]]
+
+[2017-12-17T18:01:00.591+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=27 _ThreadName=Thread-8] [timeMillis: 1513530060591] [levelValue: 800] [[
+  un userRaja]]
+
+[2017-12-17T18:01:00.591+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=27 _ThreadName=Thread-8] [timeMillis: 1513530060591] [levelValue: 800] [[
+  un userMarion]]
+
+[2017-12-17T18:01:00.591+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=27 _ThreadName=Thread-8] [timeMillis: 1513530060591] [levelValue: 800] [[
+  un userLogan]]
+
+[2017-12-17T18:01:00.591+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=27 _ThreadName=Thread-8] [timeMillis: 1513530060591] [levelValue: 800] [[
+  un useradm]]
+
+[2017-12-17T18:01:00.592+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=27 _ThreadName=Thread-8] [timeMillis: 1513530060592] [levelValue: 800] [[
+  valuetrue]]
+
+[2017-12-17T18:01:00.592+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=27 _ThreadName=Thread-8] [timeMillis: 1513530060592] [levelValue: 800] [[
+  true]]
+
+[2017-12-17T18:01:07.183+0100] [glassfish 4.1] [WARNING] [] [javax.enterprise.web] [tid: _ThreadID=29 _ThreadName=http-listener-1(4)] [timeMillis: 1513530067183] [levelValue: 900] [[
+  StandardWrapperValve[controleur.Controleur]: Servlet.service() for servlet controleur.Controleur threw exception
+java.lang.NullPointerException
+	at Modele.Modele.ajouterLivre(Modele.java:470)
+	at controleur.Controleur.doPost(Controleur.java:129)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1682)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:318)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:734)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:673)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:99)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:174)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:416)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:283)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:206)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:180)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:283)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:200)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:132)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:111)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:536)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:748)
+]]
+
+[2017-12-17T18:05:57.184+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=143 _ThreadName=Thread-26] [timeMillis: 1513530357184] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2017-12-17T18:05:57.200+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=143 _ThreadName=Thread-26] [timeMillis: 1513530357200] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@35088e87 from service registry.]]
+
+[2017-12-17T18:05:57.200+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=143 _ThreadName=Thread-8] [timeMillis: 1513530357200] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2017-12-17T18:05:57.200+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=143 _ThreadName=Thread-26] [timeMillis: 1513530357200] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2017-12-17T18:05:57.200+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=143 _ThreadName=Thread-26] [timeMillis: 1513530357200] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2017-12-17T18:05:57.530+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=154 _ThreadName=Thread-8] [timeMillis: 1513530357530] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]]]
+
