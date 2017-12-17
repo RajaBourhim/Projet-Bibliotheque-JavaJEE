@@ -7189,3 +7189,567 @@ java.lang.NullPointerException
 [2017-12-17T18:05:57.530+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=154 _ThreadName=Thread-8] [timeMillis: 1513530357530] [levelValue: 800] [[
   JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]]]
 
+[2017-12-17T18:06:54.850+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530414850] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  4.1.2  (build 1)]]
+
+[2017-12-17T18:06:54.852+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530414852] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2017-12-17T18:06:55.011+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1513530414633] [timeMillis: 1513530415011] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2017-12-17T18:06:55.014+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1513530414633] [timeMillis: 1513530415014] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2017-12-17T18:06:55.018+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1513530414633] [timeMillis: 1513530415018] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2017-12-17T18:06:55.484+0100] [glassfish 4.1] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530415484] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2017-12-17T18:06:55.609+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530415609] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2017-12-17T18:06:55.717+0100] [glassfish 4.1] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530415717] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2017-12-17T18:06:55.751+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530415751] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-1, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2017-12-17T18:06:56.026+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416026] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 120ms - bound to [/0.0.0.0:8080]]]
+
+[2017-12-17T18:06:56.052+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416052] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-2, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2017-12-17T18:06:56.101+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416101] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 22ms - bound to [/0.0.0.0:8181]]]
+
+[2017-12-17T18:06:56.112+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416112] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=admin-listener, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2017-12-17T18:06:56.122+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416122] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 6ms - bound to [/0.0.0.0:4848]]]
+
+[2017-12-17T18:06:56.189+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=24 _ThreadName=RunLevelControllerThread-1513530415085] [timeMillis: 1513530416189] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 4ms - bound to [/0.0.0.0:3700]]]
+
+[2017-12-17T18:06:56.191+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416191] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:06:56.883+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416883] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2017-12-17T18:06:56.883+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416883] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2017-12-17T18:06:56.887+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416887] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2017-12-17T18:06:56.925+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530416925] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2017-12-17T18:06:57.285+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530417285] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2017-12-17T18:06:57.299+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530417299] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2017-12-17T18:06:57.303+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530417303] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2017-12-17T18:06:57.333+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530417333] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2017-12-17T18:06:57.337+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530417337] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2017-12-17T18:06:57.833+0100] [glassfish 4.1] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530417833] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2017-12-17T18:06:57.836+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530417836] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2017-12-17T18:06:58.275+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418275] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:06:58.375+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418375] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:06:58.390+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418390] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:06:58.691+0100] [glassfish 4.1] [INFO] [AS-EJB-00036] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418691] [levelValue: 800] [[
+  TopLevel AvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:06:58.692+0100] [glassfish 4.1] [INFO] [AS-EJB-00037] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418692] [levelValue: 800] [[
+  TopLevel EjbAvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:06:58.693+0100] [glassfish 4.1] [INFO] [AS-EJB-00038] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418693] [levelValue: 800] [[
+  Global AvailabilityEnabled: [true], application AvailabilityEnabled: [false]]]
+
+[2017-12-17T18:06:58.693+0100] [glassfish 4.1] [INFO] [AS-EJB-00040] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418693] [levelValue: 800] [[
+  StatefulContainerBuilder AvailabilityEnabled [false] for this application]]
+
+[2017-12-17T18:06:58.695+0100] [glassfish 4.1] [INFO] [AS-EJB-00041] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418695] [levelValue: 800] [[
+  StatefulContainerBuilder.buildStoreManager() storeName: [UtilisateurBean-99190345757949953-BackingStore]]]
+
+[2017-12-17T18:06:58.704+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.adapter.file.FileBackingStore] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418704] [levelValue: 800] [[
+  [FileBackingStore::initialize] Successfully Created and initialized store. Working dir: C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953; Configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='UtilisateurBean-99190345757949953-BackingStore', shortUniqueName='99190345757949953', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@1dfedea1}}]]
+
+[2017-12-17T18:06:58.705+0100] [glassfish 4.1] [INFO] [AS-EJB-00043] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418705] [levelValue: 800] [[
+  StatefulContainerbuilder instantiated store: org.glassfish.ha.store.adapter.file.FileBackingStore@124df266, with ha-enabled [false], and backing store configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='UtilisateurBean-99190345757949953-BackingStore', shortUniqueName='99190345757949953', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@1dfedea1}}]]
+
+[2017-12-17T18:06:58.735+0100] [glassfish 4.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418735] [levelValue: 800] [[
+  Portable JNDI names for EJB UtilisateurBean: [java:global/BibliothequePart1/UtilisateurBean, java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur]]]
+
+[2017-12-17T18:06:58.801+0100] [glassfish 4.1] [INFO] [AS-EJB-00036] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418801] [levelValue: 800] [[
+  TopLevel AvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:06:58.801+0100] [glassfish 4.1] [INFO] [AS-EJB-00037] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418801] [levelValue: 800] [[
+  TopLevel EjbAvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:06:58.801+0100] [glassfish 4.1] [INFO] [AS-EJB-00038] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418801] [levelValue: 800] [[
+  Global AvailabilityEnabled: [true], application AvailabilityEnabled: [false]]]
+
+[2017-12-17T18:06:58.801+0100] [glassfish 4.1] [INFO] [AS-EJB-00040] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418801] [levelValue: 800] [[
+  StatefulContainerBuilder AvailabilityEnabled [false] for this application]]
+
+[2017-12-17T18:06:58.802+0100] [glassfish 4.1] [INFO] [AS-EJB-00041] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418802] [levelValue: 800] [[
+  StatefulContainerBuilder.buildStoreManager() storeName: [LivreBean-99190345757949952-BackingStore]]]
+
+[2017-12-17T18:06:58.803+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.adapter.file.FileBackingStore] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418803] [levelValue: 800] [[
+  [FileBackingStore::initialize] Successfully Created and initialized store. Working dir: C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952; Configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='LivreBean-99190345757949952-BackingStore', shortUniqueName='99190345757949952', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@2a681f46}}]]
+
+[2017-12-17T18:06:58.803+0100] [glassfish 4.1] [INFO] [AS-EJB-00043] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418803] [levelValue: 800] [[
+  StatefulContainerbuilder instantiated store: org.glassfish.ha.store.adapter.file.FileBackingStore@7c1f27a3, with ha-enabled [false], and backing store configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='LivreBean-99190345757949952-BackingStore', shortUniqueName='99190345757949952', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@2a681f46}}]]
+
+[2017-12-17T18:06:58.806+0100] [glassfish 4.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418806] [levelValue: 800] [[
+  Portable JNDI names for EJB LivreBean: [java:global/BibliothequePart1/LivreBean, java:global/BibliothequePart1/LivreBean!beans.Livre]]]
+
+[2017-12-17T18:06:58.826+0100] [glassfish 4.1] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530418826] [levelValue: 800] [[
+  WELD-000900: 2.2.13 (Final)]]
+
+[2017-12-17T18:06:59.205+0100] [glassfish 4.1] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530419205] [levelValue: 800] [[
+  HV000001: Hibernate Validator 5.1.2.Final]]
+
+[2017-12-17T18:06:59.523+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Interceptor] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530419523] [levelValue: 900] [[
+  WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled]]
+
+[2017-12-17T18:06:59.523+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Interceptor] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530419523] [levelValue: 900] [[
+  WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled]]
+
+[2017-12-17T18:06:59.743+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530419743] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:06:59.754+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530419754] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:06:59.767+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530419767] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:07:00.895+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530420895] [levelValue: 800] [[
+  Loading application [BibliothequePart1] at [/BibliothequePart1]]]
+
+[2017-12-17T18:07:00.900+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530420900] [levelValue: 800] [[
+  Loading application BibliothequePart1 done in 5 356 ms]]
+
+[2017-12-17T18:07:00.903+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1513530420903] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  4.1.2  (1) startup time : Felix (2 602ms), startup services(6 286ms), total(8 888ms)]]
+
+[2017-12-17T18:07:01.190+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530414617] [timeMillis: 1513530421190] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 94ms - bound to [/0.0.0.0:7676]]]
+
+[2017-12-17T18:07:01.317+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1513530421317] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@35088e87 as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@2ff95fc6.]]
+
+[2017-12-17T18:07:02.394+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=72 _ThreadName=Thread-19] [timeMillis: 1513530422394] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://DESKTOP-242RU18:8686/jndi/rmi://DESKTOP-242RU18:8686/jmxrmi]]
+
+[2017-12-17T18:07:02.489+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.container.ejb.org.glassfish.ejb.startup] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530422489] [levelValue: 800] [[
+  keepstate options resolved to true, saving appId 99190345757949952 for application BibliothequePart1.]]
+
+[2017-12-17T18:07:03.414+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423414] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:07:03.463+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423463] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:07:03.484+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423484] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:07:03.494+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423494] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:07:03.641+0100] [glassfish 4.1] [INFO] [AS-EJB-00036] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423641] [levelValue: 800] [[
+  TopLevel AvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:07:03.641+0100] [glassfish 4.1] [INFO] [AS-EJB-00037] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423641] [levelValue: 800] [[
+  TopLevel EjbAvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:07:03.644+0100] [glassfish 4.1] [INFO] [AS-EJB-00038] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423644] [levelValue: 800] [[
+  Global AvailabilityEnabled: [true], application AvailabilityEnabled: [false]]]
+
+[2017-12-17T18:07:03.646+0100] [glassfish 4.1] [INFO] [AS-EJB-00040] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423646] [levelValue: 800] [[
+  StatefulContainerBuilder AvailabilityEnabled [false] for this application]]
+
+[2017-12-17T18:07:03.646+0100] [glassfish 4.1] [INFO] [AS-EJB-00041] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423646] [levelValue: 800] [[
+  StatefulContainerBuilder.buildStoreManager() storeName: [UtilisateurBean-99190345757949953-BackingStore]]]
+
+[2017-12-17T18:07:03.647+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.adapter.file.FileBackingStore] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423647] [levelValue: 800] [[
+  [FileBackingStore::initialize] Successfully Created and initialized store. Working dir: C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953; Configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='UtilisateurBean-99190345757949953-BackingStore', shortUniqueName='99190345757949953', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@366f820c}}]]
+
+[2017-12-17T18:07:03.648+0100] [glassfish 4.1] [INFO] [AS-EJB-00043] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423648] [levelValue: 800] [[
+  StatefulContainerbuilder instantiated store: org.glassfish.ha.store.adapter.file.FileBackingStore@6041689e, with ha-enabled [false], and backing store configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='UtilisateurBean-99190345757949953-BackingStore', shortUniqueName='99190345757949953', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@366f820c}}]]
+
+[2017-12-17T18:07:03.662+0100] [glassfish 4.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423662] [levelValue: 800] [[
+  Portable JNDI names for EJB UtilisateurBean: [java:global/BibliothequePart1/UtilisateurBean, java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur]]]
+
+[2017-12-17T18:07:03.687+0100] [glassfish 4.1] [INFO] [AS-EJB-00036] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423687] [levelValue: 800] [[
+  TopLevel AvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:07:03.688+0100] [glassfish 4.1] [INFO] [AS-EJB-00037] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423688] [levelValue: 800] [[
+  TopLevel EjbAvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:07:03.689+0100] [glassfish 4.1] [INFO] [AS-EJB-00038] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423689] [levelValue: 800] [[
+  Global AvailabilityEnabled: [true], application AvailabilityEnabled: [false]]]
+
+[2017-12-17T18:07:03.689+0100] [glassfish 4.1] [INFO] [AS-EJB-00040] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423689] [levelValue: 800] [[
+  StatefulContainerBuilder AvailabilityEnabled [false] for this application]]
+
+[2017-12-17T18:07:03.689+0100] [glassfish 4.1] [INFO] [AS-EJB-00041] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423689] [levelValue: 800] [[
+  StatefulContainerBuilder.buildStoreManager() storeName: [LivreBean-99190345757949952-BackingStore]]]
+
+[2017-12-17T18:07:03.690+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.adapter.file.FileBackingStore] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423690] [levelValue: 800] [[
+  [FileBackingStore::initialize] Successfully Created and initialized store. Working dir: C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952; Configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='LivreBean-99190345757949952-BackingStore', shortUniqueName='99190345757949952', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@4360ad8}}]]
+
+[2017-12-17T18:07:03.691+0100] [glassfish 4.1] [INFO] [AS-EJB-00043] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423691] [levelValue: 800] [[
+  StatefulContainerbuilder instantiated store: org.glassfish.ha.store.adapter.file.FileBackingStore@705660d0, with ha-enabled [false], and backing store configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='LivreBean-99190345757949952-BackingStore', shortUniqueName='99190345757949952', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@4360ad8}}]]
+
+[2017-12-17T18:07:03.694+0100] [glassfish 4.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423694] [levelValue: 800] [[
+  Portable JNDI names for EJB LivreBean: [java:global/BibliothequePart1/LivreBean, java:global/BibliothequePart1/LivreBean!beans.Livre]]]
+
+[2017-12-17T18:07:03.844+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423844] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:07:03.854+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423854] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:07:03.863+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530423863] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:07:04.333+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530424333] [levelValue: 800] [[
+  Loading application [BibliothequePart1] at [/BibliothequePart1]]]
+
+[2017-12-17T18:07:04.434+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=46 _ThreadName=admin-listener(3)] [timeMillis: 1513530424434] [levelValue: 800] [[
+  BibliothequePart1 was successfully deployed in 2 147 milliseconds.]]
+
+[2017-12-17T18:07:21.802+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=33 _ThreadName=Thread-8] [timeMillis: 1513530441802] [levelValue: 800] [[
+  size4]]
+
+[2017-12-17T18:07:21.802+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=33 _ThreadName=Thread-8] [timeMillis: 1513530441802] [levelValue: 800] [[
+  un userRaja]]
+
+[2017-12-17T18:07:21.803+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=33 _ThreadName=Thread-8] [timeMillis: 1513530441803] [levelValue: 800] [[
+  un userMarion]]
+
+[2017-12-17T18:07:21.804+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=33 _ThreadName=Thread-8] [timeMillis: 1513530441804] [levelValue: 800] [[
+  un userLogan]]
+
+[2017-12-17T18:07:21.804+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=33 _ThreadName=Thread-8] [timeMillis: 1513530441804] [levelValue: 800] [[
+  un useradm]]
+
+[2017-12-17T18:07:21.804+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=33 _ThreadName=Thread-8] [timeMillis: 1513530441804] [levelValue: 800] [[
+  valuetrue]]
+
+[2017-12-17T18:10:18.327+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=126 _ThreadName=Thread-27] [timeMillis: 1513530618327] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2017-12-17T18:10:18.343+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=126 _ThreadName=Thread-27] [timeMillis: 1513530618343] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@35088e87 from service registry.]]
+
+[2017-12-17T18:10:18.343+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=126 _ThreadName=Thread-8] [timeMillis: 1513530618343] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2017-12-17T18:10:18.359+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=126 _ThreadName=Thread-27] [timeMillis: 1513530618359] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2017-12-17T18:10:18.359+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=126 _ThreadName=Thread-27] [timeMillis: 1513530618359] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2017-12-17T18:10:18.675+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=131 _ThreadName=Thread-8] [timeMillis: 1513530618675] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]]]
+
+[2017-12-17T18:10:53.275+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530653275] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  4.1.2  (build 1)]]
+
+[2017-12-17T18:10:53.277+0100] [glassfish 4.1] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530653277] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2017-12-17T18:10:53.385+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530653385] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2017-12-17T18:10:53.385+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530653385] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2017-12-17T18:10:53.385+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530653385] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2017-12-17T18:10:53.612+0100] [glassfish 4.1] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530653612] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2017-12-17T18:10:53.861+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530653861] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2017-12-17T18:10:53.942+0100] [glassfish 4.1] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530653942] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2017-12-17T18:10:54.030+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654030] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-1, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2017-12-17T18:10:54.122+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654122] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 34ms - bound to [/0.0.0.0:8080]]]
+
+[2017-12-17T18:10:54.164+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654164] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=http-listener-2, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2017-12-17T18:10:54.176+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654176] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 8ms - bound to [/0.0.0.0:8181]]]
+
+[2017-12-17T18:10:54.180+0100] [glassfish 4.1] [WARNING] [] [org.glassfish.grizzly.config.Utils] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654180] [levelValue: 900] [[
+  Instance could not be initialized. Class=interface org.glassfish.grizzly.http.server.AddOn, name=admin-listener, realClassName=org.glassfish.grizzly.http2.Http2AddOn]]
+
+[2017-12-17T18:10:54.193+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=18 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654193] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 7ms - bound to [/0.0.0.0:4848]]]
+
+[2017-12-17T18:10:54.252+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=16 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654252] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 4ms - bound to [/0.0.0.0:3700]]]
+
+[2017-12-17T18:10:54.274+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654274] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:10:54.907+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654907] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2017-12-17T18:10:54.907+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654907] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2017-12-17T18:10:54.923+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654923] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2017-12-17T18:10:54.954+0100] [glassfish 4.1] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530654954] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2017-12-17T18:10:55.251+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530655251] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2017-12-17T18:10:55.259+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530655259] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2017-12-17T18:10:55.263+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530655263] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2017-12-17T18:10:55.284+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530655284] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2017-12-17T18:10:55.287+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530655287] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2017-12-17T18:10:55.650+0100] [glassfish 4.1] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530655650] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2017-12-17T18:10:55.651+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530655651] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2017-12-17T18:10:56.075+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656075] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:10:56.205+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656205] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:10:56.221+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656221] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:10:56.490+0100] [glassfish 4.1] [INFO] [AS-EJB-00036] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656490] [levelValue: 800] [[
+  TopLevel AvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:10:56.490+0100] [glassfish 4.1] [INFO] [AS-EJB-00037] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656490] [levelValue: 800] [[
+  TopLevel EjbAvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:10:56.506+0100] [glassfish 4.1] [INFO] [AS-EJB-00038] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656506] [levelValue: 800] [[
+  Global AvailabilityEnabled: [true], application AvailabilityEnabled: [false]]]
+
+[2017-12-17T18:10:56.506+0100] [glassfish 4.1] [INFO] [AS-EJB-00040] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656506] [levelValue: 800] [[
+  StatefulContainerBuilder AvailabilityEnabled [false] for this application]]
+
+[2017-12-17T18:10:56.506+0100] [glassfish 4.1] [INFO] [AS-EJB-00041] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656506] [levelValue: 800] [[
+  StatefulContainerBuilder.buildStoreManager() storeName: [LivreBean-99190345757949952-BackingStore]]]
+
+[2017-12-17T18:10:56.506+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.adapter.file.FileBackingStore] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656506] [levelValue: 800] [[
+  [FileBackingStore::initialize] Successfully Created and initialized store. Working dir: C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952; Configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='LivreBean-99190345757949952-BackingStore', shortUniqueName='99190345757949952', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@7e9d2ac}}]]
+
+[2017-12-17T18:10:56.506+0100] [glassfish 4.1] [INFO] [AS-EJB-00043] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656506] [levelValue: 800] [[
+  StatefulContainerbuilder instantiated store: org.glassfish.ha.store.adapter.file.FileBackingStore@7bcb0a91, with ha-enabled [false], and backing store configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='LivreBean-99190345757949952-BackingStore', shortUniqueName='99190345757949952', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@7e9d2ac}}]]
+
+[2017-12-17T18:10:56.559+0100] [glassfish 4.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656559] [levelValue: 800] [[
+  Portable JNDI names for EJB LivreBean: [java:global/BibliothequePart1/LivreBean, java:global/BibliothequePart1/LivreBean!beans.Livre]]]
+
+[2017-12-17T18:10:56.606+0100] [glassfish 4.1] [INFO] [AS-EJB-00036] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656606] [levelValue: 800] [[
+  TopLevel AvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:10:56.606+0100] [glassfish 4.1] [INFO] [AS-EJB-00037] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656606] [levelValue: 800] [[
+  TopLevel EjbAvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:10:56.606+0100] [glassfish 4.1] [INFO] [AS-EJB-00038] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656606] [levelValue: 800] [[
+  Global AvailabilityEnabled: [true], application AvailabilityEnabled: [false]]]
+
+[2017-12-17T18:10:56.606+0100] [glassfish 4.1] [INFO] [AS-EJB-00040] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656606] [levelValue: 800] [[
+  StatefulContainerBuilder AvailabilityEnabled [false] for this application]]
+
+[2017-12-17T18:10:56.606+0100] [glassfish 4.1] [INFO] [AS-EJB-00041] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656606] [levelValue: 800] [[
+  StatefulContainerBuilder.buildStoreManager() storeName: [UtilisateurBean-99190345757949953-BackingStore]]]
+
+[2017-12-17T18:10:56.606+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.adapter.file.FileBackingStore] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656606] [levelValue: 800] [[
+  [FileBackingStore::initialize] Successfully Created and initialized store. Working dir: C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953; Configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='UtilisateurBean-99190345757949953-BackingStore', shortUniqueName='99190345757949953', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@f509d61}}]]
+
+[2017-12-17T18:10:56.606+0100] [glassfish 4.1] [INFO] [AS-EJB-00043] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656606] [levelValue: 800] [[
+  StatefulContainerbuilder instantiated store: org.glassfish.ha.store.adapter.file.FileBackingStore@5192564e, with ha-enabled [false], and backing store configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='UtilisateurBean-99190345757949953-BackingStore', shortUniqueName='99190345757949953', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@f509d61}}]]
+
+[2017-12-17T18:10:56.606+0100] [glassfish 4.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656606] [levelValue: 800] [[
+  Portable JNDI names for EJB UtilisateurBean: [java:global/BibliothequePart1/UtilisateurBean, java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur]]]
+
+[2017-12-17T18:10:56.638+0100] [glassfish 4.1] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530656638] [levelValue: 800] [[
+  WELD-000900: 2.2.13 (Final)]]
+
+[2017-12-17T18:10:57.015+0100] [glassfish 4.1] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530657015] [levelValue: 800] [[
+  HV000001: Hibernate Validator 5.1.2.Final]]
+
+[2017-12-17T18:10:57.278+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Interceptor] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530657278] [levelValue: 900] [[
+  WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled]]
+
+[2017-12-17T18:10:57.278+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Interceptor] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530657278] [levelValue: 900] [[
+  WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled]]
+
+[2017-12-17T18:10:57.459+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530657459] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:10:57.481+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530657481] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:10:57.497+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530657497] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:10:58.429+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530658429] [levelValue: 800] [[
+  Loading application [BibliothequePart1] at [/BibliothequePart1]]]
+
+[2017-12-17T18:10:58.429+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00022] [javax.enterprise.system.core] [tid: _ThreadID=17 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530658429] [levelValue: 800] [[
+  Loading application BibliothequePart1 done in 4 592 ms]]
+
+[2017-12-17T18:10:58.429+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1513530658429] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  4.1.2  (1) startup time : Felix (2 227ms), startup services(5 344ms), total(7 571ms)]]
+
+[2017-12-17T18:10:58.514+0100] [glassfish 4.1] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1513530653101] [timeMillis: 1513530658514] [levelValue: 800] [[
+  Grizzly Framework 2.3.23 started in: 16ms - bound to [/0.0.0.0:7676]]]
+
+[2017-12-17T18:10:58.645+0100] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1513530658645] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@35088e87 as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@2ff95fc6.]]
+
+[2017-12-17T18:10:59.078+0100] [glassfish 4.1] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=63 _ThreadName=Thread-18] [timeMillis: 1513530659078] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://DESKTOP-242RU18:8686/jndi/rmi://DESKTOP-242RU18:8686/jmxrmi]]
+
+[2017-12-17T18:10:59.454+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.container.ejb.org.glassfish.ejb.startup] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530659454] [levelValue: 800] [[
+  keepstate options resolved to true, saving appId 99190345757949952 for application BibliothequePart1.]]
+
+[2017-12-17T18:11:00.192+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660192] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:11:00.246+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660246] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:11:00.261+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660261] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:11:00.277+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660277] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2017-12-17T18:11:00.393+0100] [glassfish 4.1] [INFO] [AS-EJB-00036] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660393] [levelValue: 800] [[
+  TopLevel AvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:11:00.393+0100] [glassfish 4.1] [INFO] [AS-EJB-00037] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660393] [levelValue: 800] [[
+  TopLevel EjbAvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:11:00.393+0100] [glassfish 4.1] [INFO] [AS-EJB-00038] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660393] [levelValue: 800] [[
+  Global AvailabilityEnabled: [true], application AvailabilityEnabled: [false]]]
+
+[2017-12-17T18:11:00.393+0100] [glassfish 4.1] [INFO] [AS-EJB-00040] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660393] [levelValue: 800] [[
+  StatefulContainerBuilder AvailabilityEnabled [false] for this application]]
+
+[2017-12-17T18:11:00.393+0100] [glassfish 4.1] [INFO] [AS-EJB-00041] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660393] [levelValue: 800] [[
+  StatefulContainerBuilder.buildStoreManager() storeName: [UtilisateurBean-99190345757949953-BackingStore]]]
+
+[2017-12-17T18:11:00.393+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.adapter.file.FileBackingStore] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660393] [levelValue: 800] [[
+  [FileBackingStore::initialize] Successfully Created and initialized store. Working dir: C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953; Configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='UtilisateurBean-99190345757949953-BackingStore', shortUniqueName='99190345757949953', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@4ee931cb}}]]
+
+[2017-12-17T18:11:00.393+0100] [glassfish 4.1] [INFO] [AS-EJB-00043] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660393] [levelValue: 800] [[
+  StatefulContainerbuilder instantiated store: org.glassfish.ha.store.adapter.file.FileBackingStore@7c826e4, with ha-enabled [false], and backing store configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='UtilisateurBean-99190345757949953-BackingStore', shortUniqueName='99190345757949953', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\UtilisateurBean-99190345757949953', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@4ee931cb}}]]
+
+[2017-12-17T18:11:00.393+0100] [glassfish 4.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660393] [levelValue: 800] [[
+  Portable JNDI names for EJB UtilisateurBean: [java:global/BibliothequePart1/UtilisateurBean, java:global/BibliothequePart1/UtilisateurBean!beans.Utilisateur]]]
+
+[2017-12-17T18:11:00.415+0100] [glassfish 4.1] [INFO] [AS-EJB-00036] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660415] [levelValue: 800] [[
+  TopLevel AvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:11:00.415+0100] [glassfish 4.1] [INFO] [AS-EJB-00037] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660415] [levelValue: 800] [[
+  TopLevel EjbAvailabilityService.getAvailabilityEnabled: [true]]]
+
+[2017-12-17T18:11:00.415+0100] [glassfish 4.1] [INFO] [AS-EJB-00038] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660415] [levelValue: 800] [[
+  Global AvailabilityEnabled: [true], application AvailabilityEnabled: [false]]]
+
+[2017-12-17T18:11:00.415+0100] [glassfish 4.1] [INFO] [AS-EJB-00040] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660415] [levelValue: 800] [[
+  StatefulContainerBuilder AvailabilityEnabled [false] for this application]]
+
+[2017-12-17T18:11:00.415+0100] [glassfish 4.1] [INFO] [AS-EJB-00041] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660415] [levelValue: 800] [[
+  StatefulContainerBuilder.buildStoreManager() storeName: [LivreBean-99190345757949952-BackingStore]]]
+
+[2017-12-17T18:11:00.415+0100] [glassfish 4.1] [INFO] [] [org.glassfish.ha.store.adapter.file.FileBackingStore] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660415] [levelValue: 800] [[
+  [FileBackingStore::initialize] Successfully Created and initialized store. Working dir: C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952; Configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='LivreBean-99190345757949952-BackingStore', shortUniqueName='99190345757949952', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@efb4e8b}}]]
+
+[2017-12-17T18:11:00.415+0100] [glassfish 4.1] [INFO] [AS-EJB-00043] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660415] [levelValue: 800] [[
+  StatefulContainerbuilder instantiated store: org.glassfish.ha.store.adapter.file.FileBackingStore@279ed6ad, with ha-enabled [false], and backing store configuration: BackingStoreConfiguration{clusterName='null', instanceName='null', storeName='LivreBean-99190345757949952-BackingStore', shortUniqueName='99190345757949952', storeType='file', maxIdleTimeInSeconds=-1, relaxVersionCheck='null', maxLoadWaitTimeInSeconds=0, baseDirectoryName='C:\Users\Raja\Documents\GitHub\Projet-Bibliotheque-JavaJEE\glassfish4\glassfish\domains\domain1\session-store\LivreBean-99190345757949952', keyClazz=interface java.io.Serializable, valueClazz=class org.glassfish.ha.store.util.SimpleMetadata, synchronousSave=false, typicalPayloadSizeInKiloBytes=0, vendorSpecificSettings={value.class.is.thread.safe=true, async.replication=true, start.gms=false, local.caching=true, broadcast.remove.expired=false, key.transformer=com.sun.ejb.base.sfsb.util.SimpleKeyGenerator@efb4e8b}}]]
+
+[2017-12-17T18:11:00.415+0100] [glassfish 4.1] [INFO] [AS-EJB-00054] [javax.enterprise.ejb.container] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660415] [levelValue: 800] [[
+  Portable JNDI names for EJB LivreBean: [java:global/BibliothequePart1/LivreBean, java:global/BibliothequePart1/LivreBean!beans.Livre]]]
+
+[2017-12-17T18:11:00.531+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660531] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:11:00.531+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660531] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:11:00.546+0100] [glassfish 4.1] [WARN] [] [org.jboss.weld.Event] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660546] [levelValue: 900] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2017-12-17T18:11:00.916+0100] [glassfish 4.1] [INFO] [AS-WEB-GLUE-00172] [javax.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660916] [levelValue: 800] [[
+  Loading application [BibliothequePart1] at [/BibliothequePart1]]]
+
+[2017-12-17T18:11:00.979+0100] [glassfish 4.1] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=46 _ThreadName=admin-listener(5)] [timeMillis: 1513530660979] [levelValue: 800] [[
+  BibliothequePart1 was successfully deployed in 1 739 milliseconds.]]
+
+[2017-12-17T18:11:29.873+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=28 _ThreadName=Thread-8] [timeMillis: 1513530689873] [levelValue: 800] [[
+  size4]]
+
+[2017-12-17T18:11:29.873+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=28 _ThreadName=Thread-8] [timeMillis: 1513530689873] [levelValue: 800] [[
+  un userRaja]]
+
+[2017-12-17T18:11:29.874+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=28 _ThreadName=Thread-8] [timeMillis: 1513530689874] [levelValue: 800] [[
+  un userMarion]]
+
+[2017-12-17T18:11:29.874+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=28 _ThreadName=Thread-8] [timeMillis: 1513530689874] [levelValue: 800] [[
+  un userLogan]]
+
+[2017-12-17T18:11:29.875+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=28 _ThreadName=Thread-8] [timeMillis: 1513530689875] [levelValue: 800] [[
+  un useradm]]
+
+[2017-12-17T18:11:29.875+0100] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=28 _ThreadName=Thread-8] [timeMillis: 1513530689875] [levelValue: 800] [[
+  valuetrue]]
+

@@ -459,7 +459,6 @@ public class Modele {
 		return occupationARetourner;
 	}
 
- 
 	public static Bibliotheque ajouterLivre(String auteur, String titre, Bibliotheque bibli) {
 		int indexLivre = -1;
 		int j;
@@ -475,6 +474,8 @@ public class Modele {
 		} else {
 			int idLivre = bibli.getListLivres().size()+1;
 			Livre monLivre = creerLivre(idLivre,titre,auteur,1,0,0);
+			bibli.getListLivres().add(monLivre);
+			
 		}
 		return bibli;
 	}
